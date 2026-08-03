@@ -44,6 +44,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
       }}
     >
       <div
+        className="nav-header-container"
         style={{
           maxWidth: '1280px',
           margin: '0 auto',
@@ -56,6 +57,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
         {/* Brand Logo & Name */}
         <div
           onClick={() => handleNavClick('inicio')}
+          className="nav-logo-container"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -66,6 +68,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           <img
             src="/assets/logo.png"
             alt="Coronel & Asociados Logo"
+            className="nav-logo-img"
             style={{
               height: '52px',
               width: 'auto',
@@ -76,6 +79,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           />
           <div>
             <div
+              className="nav-logo-title"
               style={{
                 fontFamily: 'var(--font-serif-luxury)',
                 fontSize: '1.25rem',
@@ -88,6 +92,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
               CORONEL <span style={{ color: 'var(--color-gold)' }}>&</span> ASOCIADOS
             </div>
             <div
+              className="nav-logo-subtitle"
               style={{
                 fontSize: '0.72rem',
                 letterSpacing: '0.15em',
@@ -142,7 +147,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
         </nav>
 
         {/* Right CTA Button */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }} className="nav-actions-container">
           <button
             onClick={() => handleNavClick('contacto')}
             className="btn-primary"
@@ -152,7 +157,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             }}
           >
             <Phone size={16} />
-            <span>Consulta Urgente</span>
+            <span className="nav-cta-text">Consulta Urgente</span>
           </button>
 
           {/* Mobile Menu Toggle */}
@@ -176,12 +181,18 @@ const Navbar = ({ activeTab, setActiveTab }) => {
       {mobileMenuOpen && (
         <div
           style={{
-            background: 'var(--color-navy-dark)',
+            position: 'absolute',
+            top: '100%',
+            left: 0,
+            right: 0,
+            background: 'rgba(2, 10, 20, 0.98)',
+            backdropFilter: 'blur(20px)',
             borderBottom: '1px solid var(--border-gold)',
             padding: '20px 24px',
             display: 'flex',
             flexDirection: 'column',
             gap: '12px',
+            boxShadow: '0 15px 30px rgba(0, 0, 0, 0.5)',
           }}
         >
           {navItems.map((item) => (

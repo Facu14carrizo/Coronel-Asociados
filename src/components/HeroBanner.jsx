@@ -39,8 +39,9 @@ const HeroBanner = ({ setActiveTab }) => {
         <div style={{ maxWidth: '850px' }}>
           {/* UBA Badge */}
           <div className="uba-badge" style={{ marginBottom: '24px' }}>
-            <Award size={16} style={{ color: 'var(--color-gold)' }} />
-            <span>Excelencia Académica • Egresados Facultad de Derecho UBA</span>
+            <Award size={16} style={{ color: 'var(--color-gold)', flexShrink: 0 }} />
+            <span className="uba-badge-text-desktop">Excelencia Académica • Egresados Facultad de Derecho UBA</span>
+            <span className="uba-badge-text-mobile" style={{ display: 'none' }}>Egresados Facultad de Derecho UBA</span>
           </div>
 
           {/* Main Title Banner */}
@@ -76,6 +77,7 @@ const HeroBanner = ({ setActiveTab }) => {
 
           {/* CTAs */}
           <div
+            className="cta-buttons-container"
             style={{
               display: 'flex',
               flexWrap: 'wrap',

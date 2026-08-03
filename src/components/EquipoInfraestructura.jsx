@@ -34,7 +34,7 @@ const EquipoInfraestructura = () => {
 
         {/* Founder Feature Highlight Card */}
         <div
-          className="glass-panel-gold"
+          className="glass-panel-gold responsive-grid-12"
           style={{
             borderRadius: '16px',
             overflow: 'hidden',
@@ -47,7 +47,7 @@ const EquipoInfraestructura = () => {
           {/* Photo */}
           <div
             style={{ gridColumn: 'span 5', height: '100%', minHeight: '380px' }}
-            className="founder-photo-col"
+            className="founder-photo-col col-span-5-resp"
           >
             <img
               src="/assets/founder.png"
@@ -62,7 +62,7 @@ const EquipoInfraestructura = () => {
           </div>
 
           {/* Bio Info */}
-          <div style={{ gridColumn: 'span 7', padding: '44px' }} className="founder-bio-col">
+          <div style={{ gridColumn: 'span 7', padding: '44px' }} className="founder-bio-col col-span-7-resp padding-mobile-lg">
             <span
               style={{
                 color: 'var(--color-gold)',
@@ -93,7 +93,7 @@ const EquipoInfraestructura = () => {
               Graduado con honores en la **Facultad de Derecho de la Universidad de Buenos Aires (UBA)**. Especializado en Estrategia de Litigios Corporativos y Derecho Contencioso Administrativo. Fundó el estudio con la firme convicción de brindar asesoramiento boutique con máxima dedicación y ética profesional.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            <div className="inputs-grid-responsive" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Award style={{ color: 'var(--color-gold)' }} size={20} />
                 <span style={{ fontSize: '0.9rem', color: '#E2E8F0' }}>Egresado Facultad Derecho UBA</span>
@@ -115,7 +115,7 @@ const EquipoInfraestructura = () => {
         </div>
 
         {/* Academic Heritage & Office Infrastructure Showcase */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '30px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
           {/* Card 1: Sello UBA */}
           <div className="glass-panel" style={{ padding: '32px', borderRadius: '14px' }}>
             <div

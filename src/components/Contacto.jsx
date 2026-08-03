@@ -63,6 +63,7 @@ const Contacto = () => {
         </div>
 
         <div
+          className="responsive-grid-12"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
@@ -71,9 +72,9 @@ const Contacto = () => {
           }}
         >
           {/* Left Column: Direct Info & WhatsApp */}
-          <div style={{ gridColumn: 'span 5' }} className="contact-info-col">
+          <div style={{ gridColumn: 'span 5' }} className="contact-info-col col-span-5-resp">
             <div
-              className="glass-panel-gold"
+              className="glass-panel-gold padding-mobile-lg"
               style={{
                 padding: '36px',
                 borderRadius: '14px',
@@ -152,7 +153,7 @@ const Contacto = () => {
                     <span style={{ fontSize: '0.8rem', color: 'var(--color-text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
                       Correo Electrónico
                     </span>
-                    <p style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
+                    <p className="contact-value-text" style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
                       contacto@coronelasociados.com.ar
                     </p>
                   </div>
@@ -218,8 +219,8 @@ const Contacto = () => {
           </div>
 
           {/* Right Column: Interactive Evaluation Form */}
-          <div style={{ gridColumn: 'span 7' }} className="contact-form-col">
-            <div className="glass-panel" style={{ padding: '40px', borderRadius: '14px' }}>
+          <div style={{ gridColumn: 'span 7' }} className="contact-form-col col-span-7-resp">
+            <div className="glass-panel padding-mobile-lg" style={{ padding: '40px', borderRadius: '14px' }}>
               {submitted ? (
                 <div style={{ textAlign: 'center', padding: '40px 20px' }}>
                   <div
@@ -257,7 +258,7 @@ const Contacto = () => {
                     Formulario de Evaluación Inicial de Caso
                   </h3>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
+                  <div className="inputs-grid-responsive" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
                     <div>
                       <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
                         Nombre y Apellido *

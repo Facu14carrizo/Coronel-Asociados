@@ -178,3 +178,118 @@ body {
   color: var(--color-gold-champagne);
   background: rgba(17, 37, 62, 0.9);
 }
+
+/* Responsiveness Utilities */
+
+/* Desktop navigation is hidden on mobile */
+@media (max-width: 991px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-menu-toggle {
+    display: block !important;
+  }
+  .nav-cta-text {
+    display: none;
+  }
+  .nav-logo-subtitle {
+    display: none !important;
+  }
+  .nav-logo-title {
+    font-size: 1.05rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Grid & Layout Adjustments */
+@media (max-width: 991px) {
+  .responsive-grid-12 {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  
+  .col-span-5-resp,
+  .col-span-7-resp {
+    grid-column: span 12 !important;
+  }
+  
+  .founder-photo-col {
+    height: 320px !important;
+    min-height: 320px !important;
+  }
+
+  .padding-mobile-lg {
+    padding: 24px !important;
+  }
+  
+  .padding-mobile-md {
+    padding: 20px !important;
+  }
+
+  .uba-badge-text-desktop {
+    display: none !important;
+  }
+  .uba-badge-text-mobile {
+    display: inline !important;
+  }
+  .uba-badge {
+    padding: 6px 12px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.02em !important;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0 !important;
+  }
+
+  .cta-buttons-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-buttons-container button,
+  .cta-buttons-container a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-value-text {
+    font-size: 0.88rem !important;
+    word-break: break-all !important;
+  }
+
+  /* Header mobile adjustments to prevent horizontal overflow */
+  .nav-header-container {
+    padding: 0 12px !important;
+  }
+  .nav-logo-container {
+    gap: 8px !important;
+  }
+  .nav-logo-img {
+    height: 36px !important;
+  }
+  .nav-logo-title {
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+  }
+  .nav-actions-container {
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .inputs-grid-responsive {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .footer-bottom-responsive {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+

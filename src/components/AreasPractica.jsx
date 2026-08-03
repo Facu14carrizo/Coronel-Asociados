@@ -121,6 +121,7 @@ const AreasPractica = ({ setActiveTab }) => {
 
         {/* Practice Areas Grid Layout */}
         <div
+          className="responsive-grid-12"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
@@ -136,7 +137,7 @@ const AreasPractica = ({ setActiveTab }) => {
               flexDirection: 'column',
               gap: '12px',
             }}
-            className="area-list-col"
+            className="area-list-col col-span-5-resp"
           >
             {practiceAreasData.map((area) => {
               const IconComp = area.icon;
@@ -144,7 +145,23 @@ const AreasPractica = ({ setActiveTab }) => {
               return (
                 <div
                   key={area.id}
-                  onClick={() => setSelectedArea(area)}
+                  onClick={() => {
+                    setSelectedArea(area);
+                    if (window.innerWidth < 992) {
+                      const element = document.getElementById('area-details-container');
+                      if (element) {
+                        const offset = 80; // height of navbar
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = element.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: 'smooth'
+                        });
+                      }
+                    }
+                  }}
                   style={{
                     padding: '20px',
                     borderRadius: '10px',
@@ -193,11 +210,12 @@ const AreasPractica = ({ setActiveTab }) => {
 
           {/* Right Column: Detailed View of Selected Area */}
           <div
+            id="area-details-container"
             style={{ gridColumn: 'span 7' }}
-            className="area-detail-col"
+            className="area-detail-col col-span-7-resp"
           >
             <div
-              className="glass-panel-gold"
+              className="glass-panel-gold padding-mobile-lg"
               style={{
                 padding: '40px',
                 borderRadius: '14px',
