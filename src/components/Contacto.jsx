@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageSquare, Send, CheckCircle2, Clock, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageSquare, Send, CheckCircle2, Clock, ShieldCheck, ExternalLink } from 'lucide-react';
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ const Contacto = () => {
     const text = encodeURIComponent(
       `Hola Estudio Jurídico Coronel & Asociados, me gustaría solicitar una consulta jurídica sobre: ${formData.area}`
     );
-    window.open(`https://wa.me/5491112345678?text=${text}`, '_blank');
+    window.open(`https://wa.me/5491153698788?text=${text}`, '_blank');
   };
 
   return (
@@ -109,10 +109,10 @@ const Contacto = () => {
                       Sede Principal
                     </span>
                     <p style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
-                      Av. del Libertador 4980, Piso 10
+                      Int. Tomkinson 2910, San Isidro
                     </p>
                     <span style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>
-                      Ciudad Autónoma de Buenos Aires
+                      Provincia de Buenos Aires
                     </span>
                   </div>
                 </div>
@@ -130,10 +130,10 @@ const Contacto = () => {
                   </div>
                   <div>
                     <span style={{ fontSize: '0.8rem', color: 'var(--color-text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
-                      Teléfonos Directos
+                      Teléfono Directo
                     </span>
                     <p style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
-                      +54 (11) 4800-9900 / 9901
+                      11 5369-8788
                     </p>
                   </div>
                 </div>
@@ -154,7 +154,33 @@ const Contacto = () => {
                       Correo Electrónico
                     </span>
                     <p className="contact-value-text" style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
-                      contacto@coronelasociados.com.ar
+                      coronel.asociados.estudio@gmail.com
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                  <div
+                    style={{
+                      padding: '12px',
+                      borderRadius: '10px',
+                      background: 'rgba(197, 160, 89, 0.15)',
+                      color: 'var(--color-gold)',
+                    }}
+                  >
+                    {/* Instagram logo via inline svg or Lucide-react Instagram if available, but let's check Lucide-react imports first */}
+                    <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </span>
+                  </div>
+                  <div>
+                    <span style={{ fontSize: '0.8rem', color: 'var(--color-text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
+                      Instagram
+                    </span>
+                    <p style={{ marginTop: '2px' }}>
+                      <a href="https://instagram.com/coronel.asociados" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gold-light)', fontWeight: 600, fontSize: '0.98rem', textDecoration: 'none' }}>
+                        @coronel.asociados
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -175,7 +201,7 @@ const Contacto = () => {
                       Horarios de Atención
                     </span>
                     <p style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
-                      Lunes a Viernes: 09:00 a 19:00 hs
+                      Lunes a Viernes: 10:00 a 18:00 hs
                     </p>
                   </div>
                 </div>
@@ -218,168 +244,99 @@ const Contacto = () => {
             </div>
           </div>
 
-          {/* Right Column: Interactive Evaluation Form */}
+          {/* Right Column: Google Maps Wireframe */}
           <div style={{ gridColumn: 'span 7' }} className="contact-form-col col-span-7-resp">
-            <div className="glass-panel padding-mobile-lg" style={{ padding: '40px', borderRadius: '14px' }}>
-              {submitted ? (
-                <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-                  <div
-                    style={{
-                      width: '64px',
-                      height: '64px',
-                      borderRadius: '50%',
-                      background: 'rgba(197, 160, 89, 0.2)',
-                      color: 'var(--color-gold)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      margin: '0 auto 20px',
-                    }}
-                  >
-                    <CheckCircle2 size={36} />
-                  </div>
-                  <h3 style={{ fontFamily: 'var(--font-serif-luxury)', fontSize: '1.8rem', color: '#FFF', marginBottom: '12px' }}>
-                    Consulta Recibida
+            {/* Inject pulse animation */}
+            <style>{`
+              @keyframes pulse {
+                0% { transform: scale(0.95); opacity: 0.5; }
+                50% { transform: scale(1.3); opacity: 0.2; }
+                100% { transform: scale(1.6); opacity: 0; }
+              }
+            `}</style>
+            <div 
+              className="glass-panel padding-mobile-lg" 
+              style={{ 
+                padding: '24px', 
+                borderRadius: '14px',
+                border: '1px solid rgba(197, 160, 89, 0.25)',
+                background: 'rgba(2, 10, 20, 0.6)',
+                backdropFilter: 'blur(12px)',
+                position: 'relative',
+                overflow: 'hidden',
+                height: 'clamp(380px, 60vh, 520px)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              {/* Header inside the map container */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end', zIndex: 5, pointerEvents: 'none', width: '100%' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '6px' }}>
+                  <h3 style={{ color: '#FFF', fontFamily: 'var(--font-serif-luxury)', fontSize: '1.4rem', margin: 0, textAlign: 'right' }}>
+                    Ubicación del Estudio
                   </h3>
-                  <p style={{ color: 'var(--color-text-muted)', fontSize: '1.05rem', lineHeight: '1.6' }}>
-                    Gracias por comunicarse con **Coronel & Asociados**. Un abogado especializado de nuestro equipo analizará su requerimiento y tomará contacto a la brevedad.
-                  </p>
+                  <div style={{ 
+                    background: 'rgba(197, 160, 89, 0.15)', 
+                    border: '1px solid var(--color-gold)', 
+                    padding: '6px 12px', 
+                    borderRadius: '20px',
+                    fontSize: '0.75rem',
+                    color: 'var(--color-gold-light)',
+                    fontWeight: 600,
+                    width: 'fit-content',
+                    marginTop: '4px'
+                  }}>
+                    ZONA NORTE
+                  </div>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <h3
-                    style={{
-                      fontFamily: 'var(--font-serif-luxury)',
-                      fontSize: '1.6rem',
-                      color: '#FFF',
-                      marginBottom: '20px',
-                    }}
-                  >
-                    Formulario de Evaluación Inicial de Caso
-                  </h3>
+              </div>
 
-                  <div className="inputs-grid-responsive" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '20px' }}>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
-                        Nombre y Apellido *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.nombre}
-                        onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                        placeholder="Ej. Martín González"
-                        style={{
-                          width: '100%',
-                          padding: '12px 14px',
-                          background: 'rgba(4, 20, 36, 0.8)',
-                          border: '1px solid var(--border-glass)',
-                          borderRadius: '6px',
-                          color: '#FFF',
-                          outline: 'none',
-                        }}
-                      />
-                    </div>
+              {/* Real Google Maps Embed */}
+              <div 
+                style={{ 
+                  position: 'absolute',
+                  inset: 0,
+                  zIndex: 1,
+                }}
+              >
+                <iframe
+                  title="Mapa de Google Maps de Coronel & Asociados"
+                  src="https://maps.google.com/maps?q=-34.4662497,-58.5393246&z=16&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ 
+                    border: 0,
+                    // Subtly darkens the map to integrate seamlessly with the page dark theme
+                    filter: 'invert(90%) hue-rotate(180deg) grayscale(20%) contrast(95%) opacity(85%)',
+                  }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
 
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
-                        Teléfono de Contacto *
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        value={formData.telefono}
-                        onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                        placeholder="+54 11 1234-5678"
-                        style={{
-                          width: '100%',
-                          padding: '12px 14px',
-                          background: 'rgba(4, 20, 36, 0.8)',
-                          border: '1px solid var(--border-glass)',
-                          borderRadius: '6px',
-                          color: '#FFF',
-                          outline: 'none',
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  <div style={{ marginBottom: '20px' }}>
-                    <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
-                      Correo Electrónico *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="ejemplo@empresa.com"
-                      style={{
-                        width: '100%',
-                        padding: '12px 14px',
-                        background: 'rgba(4, 20, 36, 0.8)',
-                        border: '1px solid var(--border-glass)',
-                        borderRadius: '6px',
-                        color: '#FFF',
-                        outline: 'none',
-                      }}
-                    />
-                  </div>
-
-                  <div style={{ marginBottom: '20px' }}>
-                    <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
-                      Área de Consulta Principal
-                    </label>
-                    <select
-                      value={formData.area}
-                      onChange={(e) => setFormData({ ...formData, area: e.target.value })}
-                      style={{
-                        width: '100%',
-                        padding: '12px 14px',
-                        background: 'rgba(4, 20, 36, 0.9)',
-                        border: '1px solid var(--border-glass)',
-                        borderRadius: '6px',
-                        color: '#FFF',
-                        outline: 'none',
-                      }}
-                    >
-                      <option value="Corporativo & Empresas">Derecho Corporativo & Empresa</option>
-                      <option value="Litigios Complejos">Litigios Complejos & Arbitraje</option>
-                      <option value="Derecho Civil & Patrimonial">Derecho Civil & Patrimonial</option>
-                      <option value="Derecho Laboral Empresario">Derecho Laboral Empresario</option>
-                      <option value="Derecho Administrativo">Derecho Administrativo & Regulatorio</option>
-                    </select>
-                  </div>
-
-                  <div style={{ marginBottom: '24px' }}>
-                    <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--color-text-muted)', marginBottom: '6px' }}>
-                      Resumen del Caso o Consulta *
-                    </label>
-                    <textarea
-                      rows={4}
-                      required
-                      value={formData.mensaje}
-                      onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
-                      placeholder="Describa brevemente la situación legal..."
-                      style={{
-                        width: '100%',
-                        padding: '12px 14px',
-                        background: 'rgba(4, 20, 36, 0.8)',
-                        border: '1px solid var(--border-glass)',
-                        borderRadius: '6px',
-                        color: '#FFF',
-                        outline: 'none',
-                        resize: 'vertical',
-                      }}
-                    />
-                  </div>
-
-                  <button type="submit" className="btn-primary" style={{ width: '100%', padding: '16px' }}>
-                    <Send size={18} />
-                    <span>Enviar Consulta Confidencial</span>
-                  </button>
-                </form>
-              )}
+              {/* Bottom CTA to open external maps */}
+              <div style={{ zIndex: 5, position: 'relative' }}>
+                <a 
+                  href="https://maps.google.com/?q=Int.+Tomkinson+2910,+San+Isidro,+Provincia+de+Buenos+Aires"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                  style={{ 
+                    width: '100%', 
+                    padding: '16px', 
+                    textDecoration: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '10px'
+                  }}
+                >
+                  <ExternalLink size={18} />
+                  <span>Abrir en Google Maps</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

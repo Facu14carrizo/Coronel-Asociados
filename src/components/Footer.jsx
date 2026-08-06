@@ -109,8 +109,8 @@ const Footer = ({ setActiveTab }) => {
               Sede Central
             </h4>
             <p style={{ fontSize: '0.88rem', lineHeight: '1.6', marginBottom: '10px' }}>
-              Av. del Libertador 4980, Piso 10<br />
-              CABA, Argentina
+              Int. Tomkinson 2910, San Isidro<br />
+              Provincia de Buenos Aires
             </p>
             <p style={{ fontSize: '0.85rem', color: 'var(--color-gold-light)' }}>
               Matrículas CPACF / San Isidro / Fuero Federal

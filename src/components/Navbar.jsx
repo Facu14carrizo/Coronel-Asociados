@@ -66,7 +66,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           }}
         >
           <img
-            src="/assets/logo.png"
+            src="/assets/nicologo.png"
             alt="Coronel & Asociados Logo"
             className="nav-logo-img"
             style={{
