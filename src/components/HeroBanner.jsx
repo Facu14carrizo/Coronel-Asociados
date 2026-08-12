@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ShieldCheck, TrendingUp, Scale, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Award, ShieldCheck, TrendingUp, Scale, ArrowRight } from 'lucide-react';
 
 const HeroBanner = ({ setActiveTab }) => {
   return (
@@ -7,25 +7,15 @@ const HeroBanner = ({ setActiveTab }) => {
       style={{
         position: 'relative',
         minHeight: '100vh',
-        paddingTop: '130px',
-        paddingBottom: '80px',
+        paddingTop: '135px',
+        paddingBottom: '70px',
         display: 'flex',
         alignItems: 'center',
-        background: `linear-gradient(180deg, rgba(2,10,20,0.4) 0%, rgba(2,10,20,0.95) 100%), url('/assets/hero_banner.png')`,
+        background: `linear-gradient(90deg, rgba(5, 8, 14, 0.94) 0%, rgba(5, 8, 14, 0.84) 42%, rgba(5, 8, 14, 0.35) 75%, rgba(5, 8, 14, 0.15) 100%), linear-gradient(180deg, rgba(5, 8, 14, 0.65) 0%, transparent 25%, rgba(5, 8, 14, 0.95) 100%), url('/assets/heroo.png')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'right center',
       }}
     >
-      {/* Background Decorative Overlay */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'radial-gradient(circle at 30% 30%, rgba(197, 160, 89, 0.12) 0%, transparent 60%)',
-          pointerEvents: 'none',
-        }}
-      />
-
       <div
         style={{
           maxWidth: '1280px',
@@ -36,43 +26,62 @@ const HeroBanner = ({ setActiveTab }) => {
           zIndex: 2,
         }}
       >
-        <div style={{ maxWidth: '850px' }}>
+        <div style={{ maxWidth: '820px' }}>
           {/* UBA Badge */}
-          <div className="uba-badge" style={{ marginBottom: '24px' }}>
-            <Award size={16} style={{ color: 'var(--color-gold)', flexShrink: 0 }} />
-            <span className="uba-badge-text-desktop">Excelencia Académica • Egresados Facultad de Derecho UBA</span>
-            <span className="uba-badge-text-mobile" style={{ display: 'none' }}>Egresados Facultad de Derecho UBA</span>
+          <div
+            className="uba-badge"
+            style={{
+              marginBottom: '26px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '10px',
+              padding: '8px 18px',
+              background: 'rgba(255, 255, 255, 0.04)',
+              border: '1px solid rgba(255, 255, 255, 0.22)',
+              borderRadius: '9999px',
+              backdropFilter: 'blur(10px)',
+            }}
+          >
+            <Award size={16} strokeWidth={1.75} style={{ color: '#FFFFFF', flexShrink: 0 }} />
+            <span className="uba-badge-text-desktop" style={{ color: '#E2E8F0', fontSize: '0.8rem', letterSpacing: '0.06em', fontWeight: 600 }}>
+              EXCELENCIA ACADÉMICA • EGRESADOS FACULTAD DE DERECHO UBA
+            </span>
+            <span className="uba-badge-text-mobile" style={{ display: 'none', color: '#E2E8F0', fontSize: '0.75rem', fontWeight: 600 }}>
+              EGRESADOS FACULTAD DE DERECHO UBA
+            </span>
           </div>
 
           {/* Main Title Banner */}
           <h1
             style={{
-              fontFamily: 'var(--font-serif-luxury)',
-              fontSize: 'clamp(2.5rem, 5vw, 4.2rem)',
+              fontFamily: 'var(--font-serif-editorial), var(--font-serif-luxury), serif',
+              fontSize: 'clamp(2.6rem, 5.2vw, 4.4rem)',
               fontWeight: 800,
-              lineHeight: 1.15,
+              lineHeight: 1.1,
               color: '#FFFFFF',
-              marginBottom: '20px',
-              letterSpacing: '-0.02em',
+              marginBottom: '24px',
+              letterSpacing: '-0.01em',
+              textTransform: 'uppercase',
             }}
           >
             ESTUDIO JURÍDICO <br />
-            <span className="gold-gradient-text">CORONEL & ASOCIADOS</span>
+            CORONEL & <br />
+            ASOCIADOS
           </h1>
 
           {/* Subtitle Strategy Fusion */}
           <p
             style={{
-              fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
+              fontSize: 'clamp(1rem, 1.8vw, 1.18rem)',
               color: '#CBD5E1',
-              lineHeight: 1.6,
-              marginBottom: '36px',
+              lineHeight: 1.65,
+              marginBottom: '38px',
               fontFamily: 'var(--font-sans)',
               fontWeight: 400,
-              maxWidth: '740px',
+              maxWidth: '680px',
             }}
           >
-            Fusionamos el rigor técnico y el prestigio de la <strong style={{ color: '#FFF' }}>escuela UBA</strong> con la agilidad estratégica moderna y el análisis cuantitativo corporativo. Resguardamos su patrimonio, empresas e intereses de alta complejidad.
+            Fusionamos el rigor técnico y el prestigio de la <strong style={{ color: '#FFFFFF', fontWeight: 600 }}>escuela UBA</strong> con la agilidad estratégica moderna y el análisis cuantitativo corporativo. Resguardamos su patrimonio, empresas e intereses de alta complejidad.
           </p>
 
           {/* CTAs */}
@@ -81,8 +90,9 @@ const HeroBanner = ({ setActiveTab }) => {
             style={{
               display: 'flex',
               flexWrap: 'wrap',
+              alignItems: 'center',
               gap: '16px',
-              marginBottom: '60px',
+              marginBottom: '54px',
             }}
           >
             <button
@@ -91,7 +101,20 @@ const HeroBanner = ({ setActiveTab }) => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className="btn-primary"
-              style={{ fontSize: '1rem', padding: '16px 32px' }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '14px 28px',
+                background: '#FFFFFF',
+                color: '#060A10',
+                fontSize: '0.95rem',
+                fontWeight: 700,
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.25s ease',
+              }}
             >
               <span>Solicitar Evaluación de Caso</span>
               <ArrowRight size={18} />
@@ -102,53 +125,100 @@ const HeroBanner = ({ setActiveTab }) => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className="btn-secondary"
-              style={{ fontSize: '1rem', padding: '16px 28px' }}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '14px 28px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                color: '#FFFFFF',
+                fontSize: '0.95rem',
+                fontWeight: 500,
+                borderRadius: '8px',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                backdropFilter: 'blur(10px)',
+                cursor: 'pointer',
+                transition: 'all 0.25s ease',
+              }}
             >
               <span>Explorar Áreas de Práctica</span>
             </button>
           </div>
 
-          {/* Value Highlights Cards (Merging Classical, Modern & Corporate) */}
+          {/* Value Highlights Cards */}
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: '20px',
-              marginTop: '40px',
+              gap: '18px',
+              maxWidth: '920px',
             }}
           >
-            <div className="glass-panel" style={{ padding: '20px', borderRadius: '10px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                <Scale style={{ color: 'var(--color-gold)' }} size={24} />
-                <h3 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif-luxury)', color: '#FFF' }}>
+            <div
+              className="hero-glass-card"
+              style={{
+                background: 'rgba(8, 14, 24, 0.55)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                borderRadius: '12px',
+                padding: '24px 22px',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                <Scale style={{ color: '#FFFFFF', flexShrink: 0 }} size={24} strokeWidth={1.5} />
+                <h3 style={{ fontSize: '0.95rem', fontFamily: 'var(--font-serif-luxury)', color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                   Autoridad UBA
                 </h3>
               </div>
-              <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)' }}>
+              <p style={{ fontSize: '0.86rem', color: '#94A3B8', lineHeight: '1.55' }}>
                 Formación en la principal casa de estudios jurídicos de la Argentina. Solvencia técnica intachable.
               </p>
             </div>
 
-            <div className="glass-panel" style={{ padding: '20px', borderRadius: '10px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                <ShieldCheck style={{ color: 'var(--color-teal-accent)' }} size={24} />
-                <h3 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif-luxury)', color: '#FFF' }}>
+            <div
+              className="hero-glass-card"
+              style={{
+                background: 'rgba(8, 14, 24, 0.55)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                borderRadius: '12px',
+                padding: '24px 22px',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                <ShieldCheck style={{ color: '#FFFFFF', flexShrink: 0 }} size={24} strokeWidth={1.5} />
+                <h3 style={{ fontSize: '0.95rem', fontFamily: 'var(--font-serif-luxury)', color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                   Transparencia Absoluta
                 </h3>
               </div>
-              <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)' }}>
+              <p style={{ fontSize: '0.86rem', color: '#94A3B8', lineHeight: '1.55' }}>
                 Informes en tiempo real y honorarios pactados con máxima previsibilidad y ética profesional.
               </p>
             </div>
 
-            <div className="glass-panel" style={{ padding: '20px', borderRadius: '10px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
-                <TrendingUp style={{ color: '#E3C17B' }} size={24} />
-                <h3 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif-luxury)', color: '#FFF' }}>
+            <div
+              className="hero-glass-card"
+              style={{
+                background: 'rgba(8, 14, 24, 0.55)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                borderRadius: '12px',
+                padding: '24px 22px',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                <TrendingUp style={{ color: '#FFFFFF', flexShrink: 0 }} size={24} strokeWidth={1.5} />
+                <h3 style={{ fontSize: '0.95rem', fontFamily: 'var(--font-serif-luxury)', color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                   Éxito Cuantitativo
                 </h3>
               </div>
-              <p style={{ fontSize: '0.88rem', color: 'var(--color-text-muted)' }}>
+              <p style={{ fontSize: '0.86rem', color: '#94A3B8', lineHeight: '1.55' }}>
                 +94% de efectividad litigiosa y resolución corporativa eficiente respaldada por datos.
               </p>
             </div>
@@ -160,3 +230,4 @@ const HeroBanner = ({ setActiveTab }) => {
 };
 
 export default HeroBanner;
+
