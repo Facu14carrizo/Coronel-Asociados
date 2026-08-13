@@ -3,19 +3,7 @@ import { Award, ShieldCheck, TrendingUp, Scale, ArrowRight } from 'lucide-react'
 
 const HeroBanner = ({ setActiveTab }) => {
   return (
-    <section
-      style={{
-        position: 'relative',
-        minHeight: '100vh',
-        paddingTop: '135px',
-        paddingBottom: '70px',
-        display: 'flex',
-        alignItems: 'center',
-        background: `linear-gradient(90deg, rgba(5, 8, 14, 0.94) 0%, rgba(5, 8, 14, 0.84) 42%, rgba(5, 8, 14, 0.35) 75%, rgba(5, 8, 14, 0.15) 100%), linear-gradient(180deg, rgba(5, 8, 14, 0.65) 0%, transparent 25%, rgba(5, 8, 14, 0.95) 100%), url('/assets/heroo.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'right center',
-      }}
-    >
+    <section className="hero-section">
       <div
         style={{
           maxWidth: '1280px',
