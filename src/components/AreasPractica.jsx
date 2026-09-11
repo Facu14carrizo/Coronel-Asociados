@@ -1,138 +1,194 @@
 import React, { useState } from 'react';
-import { Briefcase, Building2, ShieldAlert, Gavel, FileCheck, ArrowRight, Sparkles, Check } from 'lucide-react';
+import { Scale, Users, ScrollText, Briefcase, Landmark, PlusCircle, Check } from 'lucide-react';
 
 const practiceAreasData = [
   {
-    id: 'corporativo',
-    title: 'Derecho Corporativo & Empresa',
-    icon: Building2,
-    badge: 'Enfoque Estratégico',
-    description: 'Asesoramiento integral para empresas, startups y PYMEs en estructuración societaria, fusiones, adquisiciones y gobernanza.',
-    details: [
-      'Constitución y reorganización de sociedades comerciales',
-      'Contratos mercantiles nacionales e internacionales',
-      'Compliance regulatorio y prevención de riesgos legales',
-      'Gobierno corporativo y pactos de socios'
-    ],
-    cases: 'Más de 140 empresas asesoradas de forma permanente.'
-  },
-  {
-    id: 'litigios',
-    title: 'Litigios Complejos & Arbitraje',
-    icon: Gavel,
-    badge: 'Defensa de Alto Impacto',
-    description: 'Representación técnica rigurosa en juicios civiles, comerciales y procesos arbitrales de gran envergadura patrimonial.',
-    details: [
-      'Litigios societarios y conflictos entre accionistas',
-      'Demandas por incumplimiento contractual y daños',
-      'Arbitraje comercial institucional y ad-hoc',
-      'Recursos extraordinarios y fuero federal'
-    ],
-    cases: '94% de tasa de resoluciones favorables e interdictos.'
-  },
-  {
-    id: 'patrimonial',
-    title: 'Derecho Civil & Patrimonial',
-    icon: ScaleIconCustom,
-    badge: 'Protección Familiar y de Bienes',
-    description: 'Planificación sucesoria, estructuración de fideicomisos, patrimonios familiares y negocios inmobiliarios.',
-    details: [
-      'Sucesiones complejas con bienes en múltiples jurisdicciones',
-      'Fideicomisos inmobiliarios y de administración',
-      'Protección de activos familiares y blindaje patrimonial',
-      'Contratación de emprendimientos reales'
-    ],
-    cases: 'Resguardo integral garantizado con máxima confidencialidad.'
-  },
-  {
     id: 'laboral',
-    title: 'Derecho Laboral Empresario',
-    icon: Briefcase,
-    badge: 'Gestión de Capital Humano',
-    description: 'Asesoramiento preventivo y litigioso para la parte empleadora. Minimización de pasivos laborales y negociaciones colectivas.',
-    details: [
-      'Auditorías de pasivo laboral y prevención de reclamos',
-      'Negociaciones con representaciones sindicales',
-      'Estructuración de desvinculaciones ejecutivas',
-      'Defensa judicial ante el Fuero del Trabajo'
-    ],
-    cases: 'Reducción comprobada del 40% en contingencias judiciales.'
+    title: 'DERECHO LABORAL',
+    badge: 'ENFOQUE PRÁCTICO Y EFICAZ',
+    badgeIcon: Scale,
+    tabIcon: Scale,
+    description: 'Asesoramiento integral para PYMEs, empresas y trabajadores en materia laboral.',
+    servicesTitle: 'SERVICIOS CLAVE EN ESTA ESPECIALIDAD:',
+    columns: [
+      [
+        'Contratos laborales',
+        'Despidos',
+        'Accidentes laborales',
+        'Diferencias salariales',
+      ]
+    ]
   },
   {
-    id: 'defensa',
-    title: 'Derecho Administrativo & Regulatorio',
-    icon: ShieldAlert,
-    badge: 'Relación con el Estado',
-    description: 'Defensa técnica ante organismos de contralor, licitaciones públicas, amparos y recursos administrativos.',
-    details: [
-      'Impugnación de actos administrativos y multas',
-      'Representación en procesos de licitación pública',
-      'Acciones de amparo y medidas cautelares contra el Estado',
-      'Asesoramiento en marcos regulatorios de energía y servicios'
-    ],
-    cases: 'Amplia solvencia técnica en regulaciones locales y federales.'
+    id: 'familia',
+    title: 'DERECHO DE FAMILIA',
+    badge: 'ENFOQUE PRÁCTICO Y EFICAZ',
+    badgeIcon: Users,
+    tabIcon: Users,
+    description: 'Asesoramiento integral para personas y familias en todas las cuestiones vinculadas al derecho de familia.',
+    servicesTitle: 'SERVICIOS CLAVE EN ESTA ESPECIALIDAD:',
+    columns: [
+      [
+        'Divorcios',
+        'Alimentos',
+        'Compensación económica',
+        'Responsabilidad parental',
+        'Liquidación de los bienes de la comunidad',
+      ],
+      [
+        'Atribución de la vivienda y canon locativo',
+        'Uniones convivenciales y pactos de convivencia',
+        'Regímenes patrimoniales y convenciones matrimoniales',
+        'Vínculos filiatorios',
+        'Determinación de la capacidad',
+      ]
+    ]
+  },
+  {
+    id: 'sucesorio',
+    title: 'DERECHO SUCESORIO',
+    badge: 'ENFOQUE PRÁCTICO Y EFICAZ',
+    badgeIcon: ScrollText,
+    tabIcon: ScrollText,
+    description: 'Asesoramiento integral en procesos sucesorios para garantizar una transición patrimonial ordenada y segura.',
+    servicesTitle: 'SERVICIOS CLAVE EN ESTA ESPECIALIDAD:',
+    columns: [
+      [
+        'Sucesiones',
+        'Partición de herencia',
+        'Planificación hereditaria',
+        'Acciones de colación y de reducción',
+        'Testamentos',
+        'Contratos sobre herencia futura',
+      ]
+    ]
+  },
+  {
+    id: 'comercial',
+    title: 'DERECHO COMERCIAL',
+    badge: 'ENFOQUE PRÁCTICO Y EFICAZ',
+    badgeIcon: Briefcase,
+    tabIcon: Briefcase,
+    description: 'Asesoramiento integral para empresas, emprendedores y comerciantes en todas las cuestiones vinculadas al derecho comercial.',
+    twoSections: true,
+    section1Title: 'ASESORAMIENTO:',
+    section1Items: ['Contratos', 'Societario', 'Tributario'],
+    section2Title: 'LITIGIOS:',
+    section2Items: [
+      'acciones relacionadas con contratos comerciales',
+      'incumplimientos contractuales',
+      'juicios ejecutivos',
+      'daños y perjuicios',
+    ]
+  },
+  {
+    id: 'previsional',
+    title: 'DERECHO PREVISIONAL',
+    badge: 'ENFOQUE PRÁCTICO Y EFICAZ',
+    badgeIcon: Landmark,
+    tabIcon: Landmark,
+    description: 'Asesoramiento integral para proteger tus derechos previsionales y obtener el mejor beneficio posible.',
+    servicesTitle: 'SERVICIOS CLAVE EN ESTA ESPECIALIDAD:',
+    columns: [
+      [
+        'Reajuste',
+        'Beneficios ley general',
+        'Regímenes diferenciales',
+        'Pensiones',
+        'PUAM',
+      ]
+    ]
+  },
+  {
+    id: 'salud',
+    title: 'DERECHO DE LA SALUD',
+    badge: 'ENFOQUE PRÁCTICO Y EFICAZ',
+    badgeIcon: PlusCircle,
+    tabIcon: PlusCircle,
+    description: 'Asesoramiento integral para la protección de tus derechos en materia de salud, con un enfoque ágil, humano y eficiente.',
+    servicesTitle: 'SERVICIOS CLAVE EN ESTA ESPECIALIDAD:',
+    columns: [
+      [
+        'Amparos de salud.',
+        'Cobertura de medicamentos.',
+        'Reclamos contra obras sociales y prepagas.',
+      ]
+    ]
   }
 ];
-
-function ScaleIconCustom(props) {
-  return <Briefcase {...props} />;
-}
 
 const AreasPractica = ({ setActiveTab }) => {
   const [selectedArea, setSelectedArea] = useState(practiceAreasData[0]);
 
   return (
     <section
+      id="areas"
       style={{
-        padding: '100px 0',
-        background: 'var(--color-bg-dark)',
-        minHeight: '100vh',
+        padding: '100px 0 120px',
+        background: '#090C10',
+        color: '#FFFFFF',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+      <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 24px' }}>
         {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 60px' }}>
+        <div style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 50px' }}>
           <span
             style={{
-              color: 'var(--color-gold)',
+              color: '#8A99AD',
               fontSize: '0.85rem',
-              fontWeight: 700,
-              letterSpacing: '0.15em',
+              fontWeight: 600,
+              letterSpacing: '0.22em',
               textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '16px',
             }}
           >
-            Especialización y Solvencia Técnica
+            ESPECIALIZACIÓN Y SOLVENCIA TÉCNICA
           </span>
           <h2
             style={{
-              fontFamily: 'var(--font-serif-luxury)',
-              fontSize: 'clamp(2rem, 3.5vw, 3rem)',
-              color: '#FFF',
-              marginTop: '10px',
-              marginBottom: '18px',
+              fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+              fontSize: 'clamp(2.2rem, 4.2vw, 3.8rem)',
+              fontWeight: 500,
+              color: '#FFFFFF',
+              lineHeight: '1.15',
+              letterSpacing: '0.04em',
+              marginBottom: '24px',
+              textTransform: 'uppercase',
             }}
           >
-            Áreas de Práctica Jurídica
+            ÁREAS DE PRÁCTICA JURÍDICA
           </h2>
-          <p style={{ color: 'var(--color-text-muted)', fontSize: '1.05rem', lineHeight: '1.6' }}>
-            Nuestra formación académica en la <strong style={{ color: '#FFF' }}>UBA</strong> nos otorga el fundamento dogmático para abordar problemáticas legales complejas con absoluta precisión.
+          <p
+            style={{
+              color: '#A0AEC0',
+              fontSize: '1.08rem',
+              lineHeight: '1.6',
+              maxWidth: '720px',
+              margin: '0 auto',
+              fontWeight: 400,
+            }}
+          >
+            Nuestra formación académica en la <strong style={{ color: '#FFFFFF', fontWeight: 600 }}>UBA</strong> nos permite abordar
+            <br />
+            problemáticas legales complejas con absoluta precisión.
           </p>
         </div>
 
-        {/* Practice Areas Grid Layout */}
+        {/* Practice Areas Grid Container */}
         <div
           className="responsive-grid-12"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '30px',
-            alignItems: 'start',
+            gap: '24px',
+            alignItems: 'stretch',
           }}
         >
-          {/* Left Column: Selector list */}
+          {/* Left Column: 6 Tab Buttons */}
           <div
             style={{
-              gridColumn: 'span 5',
+              gridColumn: 'span 4',
               display: 'flex',
               flexDirection: 'column',
               gap: '12px',
@@ -140,201 +196,290 @@ const AreasPractica = ({ setActiveTab }) => {
             className="area-list-col col-span-5-resp"
           >
             {practiceAreasData.map((area) => {
-              const IconComp = area.icon;
+              const TabIcon = area.tabIcon;
               const isSelected = selectedArea.id === area.id;
               return (
                 <div
                   key={area.id}
-                  onClick={() => {
-                    setSelectedArea(area);
-                    if (window.innerWidth < 992) {
-                      const element = document.getElementById('area-details-container');
-                      if (element) {
-                        const offset = 80; // height of navbar
-                        const bodyRect = document.body.getBoundingClientRect().top;
-                        const elementRect = element.getBoundingClientRect().top;
-                        const elementPosition = elementRect - bodyRect;
-                        const offsetPosition = elementPosition - offset;
-                        window.scrollTo({
-                          top: offsetPosition,
-                          behavior: 'smooth'
-                        });
-                      }
-                    }
-                  }}
+                  onClick={() => setSelectedArea(area)}
                   style={{
-                    padding: '20px',
-                    borderRadius: '10px',
+                    padding: '20px 24px',
+                    borderRadius: '12px',
                     cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    background: isSelected
-                      ? 'linear-gradient(135deg, rgba(197, 160, 89, 0.2) 0%, rgba(10, 30, 54, 0.9) 100%)'
-                      : 'rgba(8, 22, 40, 0.6)',
+                    transition: 'all 0.25s ease',
+                    background: isSelected ? '#161C24' : '#0D1117',
                     border: isSelected
-                      ? '1px solid var(--color-gold)'
-                      : '1px solid var(--border-glass)',
-                    boxShadow: isSelected ? '0 10px 30px rgba(197, 160, 89, 0.15)' : 'none',
+                      ? '1px solid rgba(255, 255, 255, 0.25)'
+                      : '1px solid rgba(255, 255, 255, 0.08)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '18px',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                    <div
-                      style={{
-                        padding: '10px',
-                        borderRadius: '8px',
-                        background: isSelected ? 'var(--color-gold)' : 'rgba(255, 255, 255, 0.05)',
-                        color: isSelected ? '#041424' : 'var(--color-gold)',
-                      }}
-                    >
-                      <IconComp size={22} />
-                    </div>
-                    <div>
-                      <h3
-                        style={{
-                          fontSize: '1.05rem',
-                          fontFamily: 'var(--font-serif-luxury)',
-                          color: isSelected ? 'var(--color-gold-light)' : '#FFF',
-                          fontWeight: 600,
-                        }}
-                      >
-                        {area.title}
-                      </h3>
-                      <span style={{ fontSize: '0.78rem', color: 'var(--color-text-dim)' }}>
-                        {area.badge}
-                      </span>
-                    </div>
+                  <div
+                    style={{
+                      width: '46px',
+                      height: '46px',
+                      borderRadius: '10px',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <TabIcon size={22} strokeWidth={1.5} />
                   </div>
+                  <h3
+                    style={{
+                      fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+                      fontSize: '1.02rem',
+                      fontWeight: 500,
+                      color: '#FFFFFF',
+                      letterSpacing: '0.04em',
+                      textTransform: 'uppercase',
+                      margin: 0,
+                    }}
+                  >
+                    {area.title}
+                  </h3>
                 </div>
               );
             })}
           </div>
 
-          {/* Right Column: Detailed View of Selected Area */}
+          {/* Right Column: Detailed View */}
           <div
-            id="area-details-container"
-            style={{ gridColumn: 'span 7' }}
-            className="area-detail-col col-span-7-resp"
+            style={{
+              gridColumn: 'span 8',
+              background: '#0D1117',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '16px',
+              padding: '40px 44px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              minHeight: '480px',
+            }}
+            className="col-span-7-resp"
           >
-            <div
-              className="glass-panel-gold padding-mobile-lg"
-              style={{
-                padding: '40px',
-                borderRadius: '14px',
-              }}
-            >
+            <div>
+              {/* Badge */}
               <div
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '6px',
-                  padding: '4px 12px',
+                  gap: '8px',
+                  padding: '6px 16px',
                   borderRadius: '20px',
-                  background: 'rgba(197, 160, 89, 0.15)',
-                  color: 'var(--color-gold-light)',
-                  fontSize: '0.8rem',
+                  border: '1px solid rgba(255, 255, 255, 0.22)',
+                  background: 'rgba(255, 255, 255, 0.03)',
+                  color: '#D0D7DE',
+                  fontSize: '0.75rem',
                   fontWeight: 600,
-                  marginBottom: '20px',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  marginBottom: '28px',
                 }}
               >
-                <Sparkles size={14} />
+                {React.createElement(selectedArea.badgeIcon, { size: 14, strokeWidth: 1.5 })}
                 <span>{selectedArea.badge}</span>
               </div>
 
+              {/* Title */}
               <h3
                 style={{
-                  fontFamily: 'var(--font-serif-luxury)',
-                  fontSize: '2rem',
-                  color: '#FFF',
+                  fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+                  fontSize: '2.1rem',
+                  fontWeight: 500,
+                  color: '#FFFFFF',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
                   marginBottom: '16px',
+                  lineHeight: '1.2',
                 }}
               >
                 {selectedArea.title}
               </h3>
 
+              {/* Description */}
               <p
                 style={{
-                  fontSize: '1.05rem',
-                  color: 'var(--color-text-muted)',
-                  lineHeight: '1.7',
-                  marginBottom: '30px',
+                  color: '#A0AEC0',
+                  fontSize: '1rem',
+                  lineHeight: '1.65',
+                  marginBottom: '36px',
+                  fontWeight: 400,
                 }}
               >
                 {selectedArea.description}
               </p>
 
-              <h4
-                style={{
-                  fontSize: '0.95rem',
-                  letterSpacing: '0.05em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-gold)',
-                  marginBottom: '16px',
-                }}
-              >
-                Servicios Clave en esta Especialidad:
-              </h4>
-
-              <div style={{ display: 'grid', gap: '14px', marginBottom: '36px' }}>
-                {selectedArea.details.map((detail, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '12px',
-                    }}
-                  >
-                    <div
+              {/* Special layout for Derecho Comercial vs standard columns */}
+              {selectedArea.twoSections ? (
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '1fr 1fr',
+                    gap: '40px',
+                    marginBottom: '40px',
+                  }}
+                >
+                  <div>
+                    <h4
                       style={{
-                        minWidth: '20px',
-                        height: '20px',
-                        borderRadius: '50%',
-                        background: 'rgba(197, 160, 89, 0.2)',
-                        color: 'var(--color-gold)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        marginTop: '2px',
+                        fontSize: '0.78rem',
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                        color: '#6E7C91',
+                        fontWeight: 600,
+                        marginBottom: '18px',
                       }}
                     >
-                      <Check size={12} />
+                      {selectedArea.section1Title}
+                    </h4>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                      {selectedArea.section1Items.map((item, idx) => (
+                        <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                          <div
+                            style={{
+                              width: '20px',
+                              height: '20px',
+                              borderRadius: '50%',
+                              border: '1.5px solid rgba(255, 255, 255, 0.4)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: '#FFFFFF',
+                              flexShrink: 0,
+                            }}
+                          >
+                            <Check size={12} strokeWidth={2} />
+                          </div>
+                          <span style={{ color: '#E6EDF3', fontSize: '0.94rem' }}>{item}</span>
+                        </div>
+                      ))}
                     </div>
-                    <span style={{ color: '#E2E8F0', fontSize: '0.95rem' }}>{detail}</span>
                   </div>
-                ))}
-              </div>
 
-              {/* Success metric badge for corporate fusion */}
+                  <div>
+                    <h4
+                      style={{
+                        fontSize: '0.78rem',
+                        letterSpacing: '0.12em',
+                        textTransform: 'uppercase',
+                        color: '#6E7C91',
+                        fontWeight: 600,
+                        marginBottom: '18px',
+                      }}
+                    >
+                      {selectedArea.section2Title}
+                    </h4>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                      {selectedArea.section2Items.map((item, idx) => (
+                        <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                          <div
+                            style={{
+                              width: '20px',
+                              height: '20px',
+                              borderRadius: '50%',
+                              border: '1.5px solid rgba(255, 255, 255, 0.4)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: '#FFFFFF',
+                              flexShrink: 0,
+                            }}
+                          >
+                            <Check size={12} strokeWidth={2} />
+                          </div>
+                          <span style={{ color: '#E6EDF3', fontSize: '0.94rem' }}>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <h4
+                    style={{
+                      fontSize: '0.78rem',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: '#6E7C91',
+                      fontWeight: 600,
+                      marginBottom: '20px',
+                    }}
+                  >
+                    {selectedArea.servicesTitle}
+                  </h4>
+
+                  <div
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: selectedArea.columns.length > 1 ? '1fr 1fr' : '1fr',
+                      gap: selectedArea.columns.length > 1 ? '30px' : '14px',
+                      marginBottom: '40px',
+                    }}
+                  >
+                    {selectedArea.columns.map((col, colIdx) => (
+                      <div key={colIdx} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                        {col.map((service, sIdx) => (
+                          <div key={sIdx} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                            <div
+                              style={{
+                                width: '20px',
+                                height: '20px',
+                                borderRadius: '50%',
+                                border: '1.5px solid rgba(255, 255, 255, 0.4)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: '#FFFFFF',
+                                flexShrink: 0,
+                              }}
+                            >
+                              <Check size={12} strokeWidth={2} />
+                            </div>
+                            <span style={{ color: '#E6EDF3', fontSize: '0.94rem' }}>{service}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Bottom Footer Branding Line inside Panel */}
+            <div
+              style={{
+                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                paddingTop: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '14px',
+                marginTop: '20px',
+              }}
+            >
               <div
                 style={{
-                  padding: '16px 20px',
-                  background: 'rgba(2, 10, 20, 0.6)',
+                  width: '36px',
+                  height: '36px',
                   borderRadius: '8px',
-                  borderLeft: '4px solid var(--color-gold)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'space-between',
-                  marginBottom: '30px',
+                  justifyContent: 'center',
+                  color: '#FFFFFF',
                 }}
               >
-                <span style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)' }}>
-                  {selectedArea.cases}
-                </span>
-                <span style={{ fontSize: '0.8rem', color: 'var(--color-gold)', fontWeight: 600 }}>
-                  Estudio Coronel & Asociados
-                </span>
+                <Landmark size={18} strokeWidth={1.5} />
               </div>
-
-              <button
-                onClick={() => {
-                  setActiveTab('contacto');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="btn-primary"
-                style={{ width: '100%' }}
-              >
-                <span>Consultar por {selectedArea.title}</span>
-                <ArrowRight size={18} />
-              </button>
+              <span style={{ fontSize: '0.85rem', color: '#8A99AD', fontWeight: 500 }}>
+                Estudio Coronel & Asociados
+              </span>
             </div>
           </div>
         </div>
@@ -344,3 +489,4 @@ const AreasPractica = ({ setActiveTab }) => {
 };
 
 export default AreasPractica;
+

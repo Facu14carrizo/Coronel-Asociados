@@ -1,342 +1,435 @@
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageSquare, Send, CheckCircle2, Clock, ShieldCheck, ExternalLink } from 'lucide-react';
+import React from 'react';
+import { MapPin, Phone, Mail, Navigation } from 'lucide-react';
+
+const InstagramIcon = ({ size = 22, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
 
 const Contacto = () => {
-  const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    telefono: '',
-    area: 'Corporativo & Empresas',
-    mensaje: '',
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
-  const handleWhatsApp = () => {
-    const text = encodeURIComponent(
-      `Hola Estudio Jurídico Coronel & Asociados, me gustaría solicitar una consulta jurídica sobre: ${formData.area}`
-    );
-    window.open(`https://wa.me/5491153698788?text=${text}`, '_blank');
-  };
-
   return (
     <section
+      id="contacto"
       style={{
-        padding: '100px 0',
-        background: 'var(--color-bg-dark)',
-        minHeight: '100vh',
+        padding: '100px 0 120px',
+        background: '#090C10',
+        color: '#FFFFFF',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-        {/* Header */}
-        <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 60px' }}>
+      <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 24px' }}>
+        {/* Header matching image */}
+        <div style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 50px' }}>
           <span
             style={{
-              color: 'var(--color-gold)',
+              color: '#8A99AD',
               fontSize: '0.85rem',
-              fontWeight: 700,
-              letterSpacing: '0.15em',
+              fontWeight: 600,
+              letterSpacing: '0.22em',
               textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '16px',
             }}
           >
-            Atención Prioritaria & Confidencial
+            ATENCIÓN PRIORITARIA & CONFIDENCIAL
           </span>
           <h2
             style={{
-              fontFamily: 'var(--font-serif-luxury)',
-              fontSize: 'clamp(2rem, 3.5vw, 3rem)',
-              color: '#FFF',
-              marginTop: '10px',
-              marginBottom: '18px',
+              fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+              fontSize: 'clamp(2.2rem, 4.2vw, 3.8rem)',
+              fontWeight: 500,
+              color: '#FFFFFF',
+              lineHeight: '1.15',
+              letterSpacing: '0.04em',
+              marginBottom: '24px',
+              textTransform: 'uppercase',
             }}
           >
-            Contacto & Evaluación de Caso
+            CONTACTO & EVALUACIÓN DE CASO
           </h2>
-          <p style={{ color: 'var(--color-text-muted)', fontSize: '1.05rem', lineHeight: '1.6' }}>
-            Inicie su consulta directamente con nuestro equipo de abogados de la <strong style={{ color: '#FFF' }}>UBA</strong>. Garantizamos absoluta reserva y respuesta en menos de 24 horas hábiles.
+          <p
+            style={{
+              color: '#A0AEC0',
+              fontSize: '1.08rem',
+              lineHeight: '1.6',
+              maxWidth: '720px',
+              margin: '0 auto',
+              fontWeight: 400,
+            }}
+          >
+            Inicie su consulta directamente con nuestro equipo de abogados de la <strong style={{ color: '#FFFFFF', fontWeight: 600 }}>UBA</strong>.
+            <br />
+            Garantizamos absoluta reserva y respuesta en menos de 24 horas hábiles.
           </p>
         </div>
 
+        {/* 2-Column Main Container */}
         <div
           className="responsive-grid-12"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '36px',
-            alignItems: 'start',
+            gap: '24px',
+            alignItems: 'stretch',
           }}
         >
-          {/* Left Column: Direct Info & WhatsApp */}
-          <div style={{ gridColumn: 'span 5' }} className="contact-info-col col-span-5-resp">
-            <div
-              className="glass-panel-gold padding-mobile-lg"
-              style={{
-                padding: '36px',
-                borderRadius: '14px',
-                marginBottom: '24px',
-              }}
-            >
+          {/* Left Column: Canales de atención */}
+          <div
+            style={{
+              gridColumn: 'span 4',
+              background: '#0D1117',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '16px',
+              padding: '40px 32px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+            className="col-span-5-resp"
+          >
+            <div>
               <h3
                 style={{
-                  fontFamily: 'var(--font-serif-luxury)',
-                  fontSize: '1.5rem',
-                  color: '#FFF',
-                  marginBottom: '24px',
+                  fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+                  fontSize: '1.35rem',
+                  fontWeight: 500,
+                  color: '#FFFFFF',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase',
+                  marginBottom: '32px',
                 }}
               >
-                Canales de Atención
+                CANALES DE ATENCIÓN
               </h3>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+                {/* Sede Principal */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
                   <div
                     style={{
-                      padding: '12px',
-                      borderRadius: '10px',
-                      background: 'rgba(197, 160, 89, 0.15)',
-                      color: 'var(--color-gold)',
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '12px',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      flexShrink: 0,
                     }}
                   >
-                    <MapPin size={22} />
+                    <MapPin size={22} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--color-text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
-                      Sede Principal
+                    <span
+                      style={{
+                        fontSize: '0.75rem',
+                        color: '#6E7C91',
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        fontWeight: 600,
+                        display: 'block',
+                      }}
+                    >
+                      SEDE PRINCIPAL
                     </span>
-                    <p style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
+                    <p style={{ color: '#FFFFFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '4px', lineHeight: '1.3' }}>
                       Int. Tomkinson 2910, San Isidro
                     </p>
-                    <span style={{ fontSize: '0.85rem', color: 'var(--color-text-muted)' }}>
+                    <span style={{ fontSize: '0.85rem', color: '#8A99AD', display: 'block', marginTop: '2px' }}>
                       Provincia de Buenos Aires
                     </span>
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)' }}></div>
+
+                {/* Telefono Directo */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
                   <div
                     style={{
-                      padding: '12px',
-                      borderRadius: '10px',
-                      background: 'rgba(197, 160, 89, 0.15)',
-                      color: 'var(--color-gold)',
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '12px',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      flexShrink: 0,
                     }}
                   >
-                    <Phone size={22} />
+                    <Phone size={22} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--color-text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
-                      Teléfono Directo
+                    <span
+                      style={{
+                        fontSize: '0.75rem',
+                        color: '#6E7C91',
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        fontWeight: 600,
+                        display: 'block',
+                      }}
+                    >
+                      TELÉFONO DIRECTO
                     </span>
-                    <p style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
+                    <p style={{ color: '#FFFFFF', fontWeight: 600, fontSize: '1.05rem', marginTop: '4px' }}>
                       11 5369-8788
                     </p>
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)' }}></div>
+
+                {/* Correo Electrónico */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
                   <div
                     style={{
-                      padding: '12px',
-                      borderRadius: '10px',
-                      background: 'rgba(197, 160, 89, 0.15)',
-                      color: 'var(--color-gold)',
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '12px',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      flexShrink: 0,
                     }}
                   >
-                    <Mail size={22} />
+                    <Mail size={22} strokeWidth={1.5} />
                   </div>
-                  <div>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--color-text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
-                      Correo Electrónico
+                  <div style={{ overflow: 'hidden' }}>
+                    <span
+                      style={{
+                        fontSize: '0.75rem',
+                        color: '#6E7C91',
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        fontWeight: 600,
+                        display: 'block',
+                      }}
+                    >
+                      CORREO ELECTRÓNICO
                     </span>
-                    <p className="contact-value-text" style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
+                    <p
+                      className="contact-value-text"
+                      style={{
+                        color: '#FFFFFF',
+                        fontWeight: 500,
+                        fontSize: '0.92rem',
+                        marginTop: '4px',
+                        wordBreak: 'break-all',
+                      }}
+                    >
                       coronel.asociados.estudio@gmail.com
                     </p>
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)' }}></div>
+
+                {/* Instagram */}
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
                   <div
                     style={{
-                      padding: '12px',
-                      borderRadius: '10px',
-                      background: 'rgba(197, 160, 89, 0.15)',
-                      color: 'var(--color-gold)',
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '12px',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#FFFFFF',
+                      flexShrink: 0,
                     }}
                   >
-                    {/* Instagram logo via inline svg or Lucide-react Instagram if available, but let's check Lucide-react imports first */}
-                    <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                    </span>
+                    <InstagramIcon size={22} />
                   </div>
                   <div>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--color-text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
-                      Instagram
+                    <span
+                      style={{
+                        fontSize: '0.75rem',
+                        color: '#6E7C91',
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        fontWeight: 600,
+                        display: 'block',
+                      }}
+                    >
+                      INSTAGRAM
                     </span>
-                    <p style={{ marginTop: '2px' }}>
-                      <a href="https://instagram.com/coronel.asociados" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-gold-light)', fontWeight: 600, fontSize: '0.98rem', textDecoration: 'none' }}>
+                    <p style={{ marginTop: '4px' }}>
+                      <a
+                        href="https://instagram.com/coronel.asociados"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          color: '#FFFFFF',
+                          fontWeight: 500,
+                          fontSize: '0.98rem',
+                          textDecoration: 'none',
+                        }}
+                      >
                         @coronel.asociados
                       </a>
                     </p>
                   </div>
                 </div>
-
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                  <div
-                    style={{
-                      padding: '12px',
-                      borderRadius: '10px',
-                      background: 'rgba(197, 160, 89, 0.15)',
-                      color: 'var(--color-gold)',
-                    }}
-                  >
-                    <Clock size={22} />
-                  </div>
-                  <div>
-                    <span style={{ fontSize: '0.8rem', color: 'var(--color-text-dim)', textTransform: 'uppercase', fontWeight: 600 }}>
-                      Horarios de Atención
-                    </span>
-                    <p style={{ color: '#FFF', fontWeight: 600, fontSize: '0.98rem', marginTop: '2px' }}>
-                      Lunes a Viernes: 10:00 a 18:00 hs
-                    </p>
-                  </div>
-                </div>
               </div>
-
-              {/* Direct WhatsApp CTA */}
-              <div style={{ marginTop: '32px' }}>
-                <button
-                  onClick={handleWhatsApp}
-                  style={{
-                    width: '100%',
-                    padding: '14px 20px',
-                    background: '#25D366',
-                    color: '#000',
-                    border: 'none',
-                    borderRadius: '8px',
-                    fontWeight: 700,
-                    fontSize: '0.95rem',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '10px',
-                    boxShadow: '0 8px 20px rgba(37, 211, 102, 0.25)',
-                    transition: 'transform 0.2s ease',
-                  }}
-                >
-                  <MessageSquare size={20} />
-                  <span>Consulta Inmediata por WhatsApp</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Secretarial / Security Guarantee */}
-            <div className="glass-panel" style={{ padding: '20px', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '14px' }}>
-              <ShieldCheck size={28} style={{ color: 'var(--color-gold)' }} />
-              <p style={{ fontSize: '0.86rem', color: 'var(--color-text-muted)' }}>
-                Toda comunicación vertida en este medio está amparada por el secreto profesional ley 23.187.
-              </p>
             </div>
           </div>
 
-          {/* Right Column: Google Maps Wireframe */}
-          <div style={{ gridColumn: 'span 7' }} className="contact-form-col col-span-7-resp">
-            {/* Inject pulse animation */}
-            <style>{`
-              @keyframes pulse {
-                0% { transform: scale(0.95); opacity: 0.5; }
-                50% { transform: scale(1.3); opacity: 0.2; }
-                100% { transform: scale(1.6); opacity: 0; }
-              }
-            `}</style>
-            <div 
-              className="glass-panel padding-mobile-lg" 
-              style={{ 
-                padding: '24px', 
-                borderRadius: '14px',
-                border: '1px solid rgba(197, 160, 89, 0.25)',
-                background: 'rgba(2, 10, 20, 0.6)',
-                backdropFilter: 'blur(12px)',
-                position: 'relative',
-                overflow: 'hidden',
-                height: 'clamp(380px, 60vh, 520px)',
+          {/* Right Column: Google Map Dark Styled Container */}
+          <div
+            style={{
+              gridColumn: 'span 8',
+              background: '#0D1117',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '16px',
+              padding: '36px',
+              position: 'relative',
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              minHeight: '480px',
+            }}
+            className="col-span-7-resp"
+          >
+            {/* Top Bar inside Map Frame */}
+            <div
+              style={{
                 display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
+                justifyContent: 'flex-end',
+                alignItems: 'flex-start',
+                zIndex: 5,
+                position: 'relative',
+                pointerEvents: 'none',
               }}
             >
-              {/* Header inside the map container */}
-              <div style={{ display: 'flex', justifyContent: 'flex-end', zIndex: 5, pointerEvents: 'none', width: '100%' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '6px' }}>
-                  <h3 style={{ color: '#FFF', fontFamily: 'var(--font-serif-luxury)', fontSize: '1.4rem', margin: 0, textAlign: 'right' }}>
-                    Ubicación del Estudio
-                  </h3>
-                  <div style={{ 
-                    background: 'rgba(197, 160, 89, 0.15)', 
-                    border: '1px solid var(--color-gold)', 
-                    padding: '6px 12px', 
-                    borderRadius: '20px',
-                    fontSize: '0.75rem',
-                    color: 'var(--color-gold-light)',
-                    fontWeight: 600,
-                    width: 'fit-content',
-                    marginTop: '4px'
-                  }}>
-                    ZONA NORTE
-                  </div>
-                </div>
-              </div>
-
-              {/* Real Google Maps Embed */}
-              <div 
-                style={{ 
-                  position: 'absolute',
-                  inset: 0,
-                  zIndex: 1,
-                }}
-              >
-                <iframe
-                  title="Mapa de Google Maps de Coronel & Asociados"
-                  src="https://maps.google.com/maps?q=-34.4662497,-58.5393246&z=16&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ 
-                    border: 0,
-                    // Subtly darkens the map to integrate seamlessly with the page dark theme
-                    filter: 'invert(90%) hue-rotate(180deg) grayscale(20%) contrast(95%) opacity(85%)',
-                  }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-
-              {/* Bottom CTA to open external maps */}
-              <div style={{ zIndex: 5, position: 'relative' }}>
-                <a 
-                  href="https://maps.google.com/?q=Int.+Tomkinson+2910,+San+Isidro,+Provincia+de+Buenos+Aires"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                  style={{ 
-                    width: '100%', 
-                    padding: '16px', 
-                    textDecoration: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '10px'
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
+                <h3
+                  style={{
+                    fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+                    fontSize: '1.35rem',
+                    fontWeight: 500,
+                    color: '#FFFFFF',
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                    margin: 0,
                   }}
                 >
-                  <ExternalLink size={18} />
-                  <span>Abrir en Google Maps</span>
-                </a>
+                  UBICACIÓN DEL ESTUDIO
+                </h3>
+                <span
+                  style={{
+                    border: '1px solid rgba(255, 255, 255, 0.4)',
+                    borderRadius: '20px',
+                    padding: '4px 14px',
+                    fontSize: '0.75rem',
+                    color: '#FFFFFF',
+                    letterSpacing: '0.08em',
+                    fontWeight: 600,
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  ZONA NORTE
+                </span>
               </div>
+            </div>
+
+            {/* Dark Styled Google Maps Background */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                zIndex: 1,
+              }}
+            >
+              <iframe
+                title="Ubicación Estudio Coronel & Asociados"
+                src="https://maps.google.com/maps?q=-34.4662497,-58.5393246&z=15&output=embed"
+                width="100%"
+                height="100%"
+                style={{
+                  border: 0,
+                  filter: 'invert(92%) hue-rotate(180deg) grayscale(85%) contrast(120%) brightness(80%)',
+                  pointerEvents: 'auto',
+                }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            {/* Custom Location Marker Pin overlay */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '52%',
+                left: '66%',
+                transform: 'translate(-50%, -100%)',
+                zIndex: 4,
+                pointerEvents: 'none',
+              }}
+            >
+              <svg width="42" height="52" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12C0 21 12 30 12 30C12 30 24 21 24 12C24 5.37 18.63 0 12 0Z"
+                  fill="#FFFFFF"
+                />
+                <circle cx="12" cy="11" r="4" fill="#0D1117" />
+              </svg>
+            </div>
+
+            {/* Bottom Subtle "Cómo Llegar" Button */}
+            <div
+              style={{
+                position: 'relative',
+                zIndex: 5,
+                display: 'flex',
+                justifyContent: 'flex-end',
+                pointerEvents: 'auto',
+              }}
+            >
+              <a
+                href="https://maps.google.com/?q=Int.+Tomkinson+2910,+San+Isidro,+Provincia+de+Buenos+Aires"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '10px 18px',
+                  background: 'rgba(13, 17, 23, 0.85)',
+                  backdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255, 255, 255, 0.25)',
+                  borderRadius: '30px',
+                  color: '#FFFFFF',
+                  fontSize: '0.82rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.04em',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4)',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#FFFFFF';
+                  e.currentTarget.style.color = '#0D1117';
+                  e.currentTarget.style.borderColor = '#FFFFFF';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(13, 17, 23, 0.85)';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.25)';
+                }}
+              >
+                <Navigation size={14} />
+                <span>Cómo Llegar</span>
+              </a>
             </div>
           </div>
         </div>
@@ -346,3 +439,4 @@ const Contacto = () => {
 };
 
 export default Contacto;
+

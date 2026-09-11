@@ -65,36 +65,53 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             cursor: 'pointer',
           }}
         >
-          {/* Custom Laurel Wreath Emblem matching mockup */}
+          {/* Clean Premium Laurel Wreath Emblem */}
           <svg
-            width="46"
-            height="46"
+            width="44"
+            height="44"
             viewBox="0 0 100 100"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className="nav-logo-img"
             style={{ flexShrink: 0 }}
           >
-            {/* Left Wreath */}
-            <path d="M 46 86 C 24 78 12 56 16 34 C 18 24 24 16 32 10" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" />
-            <path d="M 32 10 C 30 18 36 22 36 22 C 30 24 25 20 22 17" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M 24 28 C 19 34 25 40 25 40 C 19 40 15 34 16 29" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M 17 46 C 11 52 17 60 17 60 C 12 58 9 52 10 47" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M 18 64 C 15 72 23 79 23 79 C 17 76 14 69 15 64" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M 27 79 C 29 86 39 89 39 89 C 33 86 29 81 27 77" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            {/* Right Wreath */}
-            <path d="M 54 86 C 76 78 88 56 84 34 C 82 24 76 16 68 10" stroke="#FFFFFF" strokeWidth="2.2" strokeLinecap="round" />
-            <path d="M 68 10 C 70 18 64 22 64 22 C 70 24 75 20 78 17" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M 76 28 C 81 34 75 40 75 40 C 81 40 85 34 84 29" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M 83 46 C 89 52 83 60 83 60 C 88 58 91 52 90 47" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M 82 64 C 85 72 77 79 77 79 C 83 76 86 69 85 64" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            <path d="M 73 79 C 71 86 61 89 61 89 C 67 86 71 81 73 77" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" />
-            {/* Crossed ribbons */}
-            <path d="M 38 86 L 62 94" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
-            <path d="M 62 86 L 38 94" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
-            {/* C Emblem in Serif */}
-            <text x="50" y="58" textAnchor="middle" dominantBaseline="middle" fill="#FFFFFF" fontFamily="Playfair Display, Cinzel, Georgia, serif" fontSize="33" fontWeight="600">
-              (C)
+            {/* Outer Laurel Wreath Circles & Leaves */}
+            <path
+              d="M 50 90 C 26 90 12 70 12 48 C 12 30 22 16 36 10"
+              stroke="#FFFFFF"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 50 90 C 74 90 88 70 88 48 C 88 30 78 16 64 10"
+              stroke="#FFFFFF"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            />
+            {/* Left Leaf Clusters */}
+            <path d="M 22 75 C 16 70 15 62 20 58 C 22 64 28 68 22 75 Z" fill="#FFFFFF" />
+            <path d="M 14 56 C 10 49 11 41 17 38 C 18 44 23 50 14 56 Z" fill="#FFFFFF" />
+            <path d="M 18 36 C 16 28 20 21 27 20 C 26 26 29 32 18 36 Z" fill="#FFFFFF" />
+            <path d="M 30 20 C 30 12 36 7 43 9 C 40 15 41 22 30 20 Z" fill="#FFFFFF" />
+            {/* Right Leaf Clusters */}
+            <path d="M 78 75 C 84 70 85 62 80 58 C 78 64 72 68 78 75 Z" fill="#FFFFFF" />
+            <path d="M 86 56 C 90 49 89 41 83 38 C 82 44 77 50 86 56 Z" fill="#FFFFFF" />
+            <path d="M 82 36 C 84 28 80 21 73 20 C 74 26 71 32 82 36 Z" fill="#FFFFFF" />
+            <path d="M 70 20 C 70 12 64 7 57 9 C 60 15 59 22 70 20 Z" fill="#FFFFFF" />
+            {/* Bottom Tie */}
+            <path d="M 44 88 L 50 93 L 56 88" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            {/* Elegant Serif Letter C */}
+            <text
+              x="50"
+              y="53"
+              textAnchor="middle"
+              dominantBaseline="central"
+              fill="#FFFFFF"
+              fontFamily="'Cinzel', 'Playfair Display', Georgia, serif"
+              fontSize="40"
+              fontWeight="600"
+            >
+              C
             </text>
           </svg>
 

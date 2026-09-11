@@ -6,7 +6,7 @@ const EquipoInfraestructura = () => {
     <section
       style={{
         padding: '100px 0',
-        background: 'linear-gradient(180deg, var(--color-bg-dark) 0%, #04101D 100%)',
+        background: 'var(--color-bg-dark)',
         minHeight: '100vh',
       }}
     >
@@ -34,24 +34,26 @@ const EquipoInfraestructura = () => {
 
         {/* Founder Feature Highlight Card */}
         <div
-          className="glass-panel-gold responsive-grid-12"
           style={{
+            background: '#0D1117',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
             borderRadius: '16px',
             overflow: 'hidden',
             marginBottom: '70px',
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            alignItems: 'center',
+            alignItems: 'stretch',
           }}
+          className="responsive-grid-12"
         >
           {/* Photo */}
           <div
-            style={{ gridColumn: 'span 5', height: '100%', minHeight: '380px' }}
+            style={{ gridColumn: 'span 5', height: '100%', minHeight: '400px' }}
             className="founder-photo-col col-span-5-resp"
           >
             <img
               src="/assets/founder.png"
-              alt="Socio Fundador Dr. Coronel - Abogado UBA"
+              alt="Socio Fundador Dr. Nicolás Alberto Coronel"
               style={{
                 width: '100%',
                 height: '100%',
@@ -62,53 +64,113 @@ const EquipoInfraestructura = () => {
           </div>
 
           {/* Bio Info */}
-          <div style={{ gridColumn: 'span 7', padding: '44px' }} className="founder-bio-col col-span-7-resp padding-mobile-lg">
-            <span
-              style={{
-                color: 'var(--color-gold)',
-                fontSize: '0.85rem',
-                fontWeight: 700,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-              }}
-            >
-              Socio Fundador
-            </span>
-            <h3
-              style={{
-                fontFamily: 'var(--font-serif-luxury)',
-                fontSize: '2.2rem',
-                color: '#FFF',
-                marginTop: '6px',
-                marginBottom: '8px',
-              }}
-            >
-              Dr. Nicolás Coronel
-            </h3>
-            <p style={{ color: 'var(--color-gold-light)', fontWeight: 600, fontSize: '0.95rem', marginBottom: '20px' }}>
-              Abogado (Abogacía - Universidad de Buenos Aires) • Matrícula CPACF
-            </p>
+          <div
+            style={{
+              gridColumn: 'span 7',
+              padding: '48px 44px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+            className="founder-bio-col col-span-7-resp padding-mobile-lg"
+          >
+            <div>
+              <span
+                style={{
+                  color: '#8A99AD',
+                  fontSize: '0.78rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                  marginBottom: '12px',
+                }}
+              >
+                SOCIO FUNDADOR
+              </span>
+              <h3
+                style={{
+                  fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+                  fontSize: '2.4rem',
+                  fontWeight: 500,
+                  color: '#FFFFFF',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
+                  marginBottom: '20px',
+                  lineHeight: '1.15',
+                }}
+              >
+                NICOLÁS ALBERTO CORONEL
+              </h3>
 
-            <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.7', fontSize: '0.98rem', marginBottom: '24px' }}>
-              Graduado con honores en la **Facultad de Derecho de la Universidad de Buenos Aires (UBA)**. Especializado en Estrategia de Litigios Corporativos y Derecho Contencioso Administrativo. Fundó el estudio con la firme convicción de brindar asesoramiento boutique con máxima dedicación y ética profesional.
-            </p>
+              <p style={{ color: '#E6EDF3', fontWeight: 400, fontSize: '1rem', marginBottom: '8px' }}>
+                Abogado (Abogacía - Universidad de Buenos Aires)
+              </p>
+              <p style={{ color: '#E6EDF3', fontWeight: 400, fontSize: '1rem', marginBottom: '28px' }}>
+                Matrícula CPACF • Matrícula CASI
+              </p>
 
-            <div className="inputs-grid-responsive" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Award style={{ color: 'var(--color-gold)' }} size={20} />
-                <span style={{ fontSize: '0.9rem', color: '#E2E8F0' }}>Egresado Facultad Derecho UBA</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>
+                <p style={{ color: '#A0AEC0', lineHeight: '1.65', fontSize: '0.98rem' }}>
+                  Graduado en la Facultad de Derecho de la Universidad de Buenos Aires.
+                </p>
+                <p style={{ color: '#A0AEC0', lineHeight: '1.65', fontSize: '0.98rem' }}>
+                  Especializado en derecho laboral para asesoramiento a empresas, PYMEs y trabajadores.
+                </p>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Shield style={{ color: 'var(--color-gold)' }} size={20} />
-                <span style={{ fontSize: '0.9rem', color: '#E2E8F0' }}>Miembro CPACF & AADA</span>
+            </div>
+
+            {/* Bottom Badges Divider & Icons */}
+            <div
+              style={{
+                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                paddingTop: '24px',
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '24px',
+              }}
+              className="inputs-grid-responsive"
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '10px',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#FFFFFF',
+                    flexShrink: 0,
+                  }}
+                >
+                  <GraduationCap size={22} strokeWidth={1.5} />
+                </div>
+                <span style={{ fontSize: '0.92rem', color: '#E6EDF3', lineHeight: '1.3' }}>
+                  Egresado Facultad de Derecho UBA
+                </span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Building style={{ color: 'var(--color-gold)' }} size={20} />
-                <span style={{ fontSize: '0.9rem', color: '#E2E8F0' }}>Asesor de Empresas & Directorios</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Users style={{ color: 'var(--color-gold)' }} size={20} />
-                <span style={{ fontSize: '0.9rem', color: '#E2E8F0' }}>Red de Asistentes Especializados</span>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '10px',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#FFFFFF',
+                    flexShrink: 0,
+                  }}
+                >
+                  <Shield size={22} strokeWidth={1.5} />
+                </div>
+                <span style={{ fontSize: '0.92rem', color: '#E6EDF3', lineHeight: '1.3' }}>
+                  Miembro CPACF, CASI
+                </span>
               </div>
             </div>
           </div>
