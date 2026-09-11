@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Scale, Users, ScrollText, Briefcase, Landmark, PlusCircle, Check } from 'lucide-react';
+import { Scale, Users, ScrollText, Briefcase, Landmark, PlusCircle, Check, ChevronDown } from 'lucide-react';
 
 const practiceAreasData = [
   {
@@ -118,7 +118,24 @@ const practiceAreasData = [
 ];
 
 const AreasPractica = ({ setActiveTab }) => {
-  const [selectedArea, setSelectedArea] = useState(practiceAreasData[0]);
+  const [openAreaId, setOpenAreaId] = useState('laboral');
+
+  const toggleAccordion = (id) => {
+    setOpenAreaId((prev) => {
+      const nextId = prev === id ? null : id;
+      if (nextId) {
+        setTimeout(() => {
+          const el = document.getElementById(`accordion-item-${nextId}`);
+          if (el) {
+            const yOffset = -90; // Navbar offset
+            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 80);
+      }
+      return nextId;
+    });
+  };
 
   return (
     <section
@@ -129,7 +146,7 @@ const AreasPractica = ({ setActiveTab }) => {
         color: '#FFFFFF',
       }}
     >
-      <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 24px' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 50px' }}>
           <span
@@ -175,313 +192,306 @@ const AreasPractica = ({ setActiveTab }) => {
           </p>
         </div>
 
-        {/* Practice Areas Grid Container */}
-        <div
-          className="responsive-grid-12"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '24px',
-            alignItems: 'stretch',
-          }}
-        >
-          {/* Left Column: 6 Tab Buttons */}
-          <div
-            style={{
-              gridColumn: 'span 4',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '12px',
-            }}
-            className="area-list-col col-span-5-resp"
-          >
-            {practiceAreasData.map((area) => {
-              const TabIcon = area.tabIcon;
-              const isSelected = selectedArea.id === area.id;
-              return (
+        {/* Accordion Container */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {practiceAreasData.map((area) => {
+            const TabIcon = area.tabIcon;
+            const isOpen = openAreaId === area.id;
+
+            return (
+              <div
+                key={area.id}
+                id={`accordion-item-${area.id}`}
+                style={{
+                  background: '#0D1117',
+                  border: isOpen
+                    ? '1px solid rgba(255, 255, 255, 0.35)'
+                    : '1px solid rgba(255, 255, 255, 0.08)',
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease',
+                  boxShadow: isOpen ? '0 8px 30px rgba(0, 0, 0, 0.5)' : 'none',
+                }}
+              >
+                {/* Accordion Header / Button */}
                 <div
-                  key={area.id}
-                  onClick={() => setSelectedArea(area)}
+                  onClick={() => toggleAccordion(area.id)}
                   style={{
-                    padding: '20px 24px',
-                    borderRadius: '12px',
+                    padding: '24px 28px',
                     cursor: 'pointer',
-                    transition: 'all 0.25s ease',
-                    background: isSelected ? '#161C24' : '#0D1117',
-                    border: isSelected
-                      ? '1px solid rgba(255, 255, 255, 0.25)'
-                      : '1px solid rgba(255, 255, 255, 0.08)',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '18px',
+                    justifyContent: 'space-between',
+                    gap: '20px',
+                    background: isOpen ? '#141A23' : 'transparent',
+                    transition: 'background 0.25s ease',
                   }}
                 >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    <div
+                      style={{
+                        width: '48px',
+                        height: '48px',
+                        borderRadius: '12px',
+                        border: isOpen ? '1px solid #FFFFFF' : '1px solid rgba(255, 255, 255, 0.15)',
+                        background: isOpen ? 'rgba(255, 255, 255, 0.08)' : 'transparent',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#FFFFFF',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <TabIcon size={22} strokeWidth={1.5} />
+                    </div>
+                    <h3
+                      style={{
+                        fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+                        fontSize: '1.2rem',
+                        fontWeight: 500,
+                        color: '#FFFFFF',
+                        letterSpacing: '0.04em',
+                        textTransform: 'uppercase',
+                        margin: 0,
+                      }}
+                    >
+                      {area.title}
+                    </h3>
+                  </div>
+
                   <div
                     style={{
-                      width: '46px',
-                      height: '46px',
-                      borderRadius: '10px',
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '50%',
                       border: '1px solid rgba(255, 255, 255, 0.15)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: '#FFFFFF',
+                      transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.3s ease',
                       flexShrink: 0,
                     }}
                   >
-                    <TabIcon size={22} strokeWidth={1.5} />
-                  </div>
-                  <h3
-                    style={{
-                      fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
-                      fontSize: '1.02rem',
-                      fontWeight: 500,
-                      color: '#FFFFFF',
-                      letterSpacing: '0.04em',
-                      textTransform: 'uppercase',
-                      margin: 0,
-                    }}
-                  >
-                    {area.title}
-                  </h3>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Right Column: Detailed View */}
-          <div
-            style={{
-              gridColumn: 'span 8',
-              background: '#0D1117',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '16px',
-              padding: '40px 44px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              minHeight: '480px',
-            }}
-            className="col-span-7-resp"
-          >
-            <div>
-              {/* Badge */}
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '6px 16px',
-                  borderRadius: '20px',
-                  border: '1px solid rgba(255, 255, 255, 0.22)',
-                  background: 'rgba(255, 255, 255, 0.03)',
-                  color: '#D0D7DE',
-                  fontSize: '0.75rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  marginBottom: '28px',
-                }}
-              >
-                {React.createElement(selectedArea.badgeIcon, { size: 14, strokeWidth: 1.5 })}
-                <span>{selectedArea.badge}</span>
-              </div>
-
-              {/* Title */}
-              <h3
-                style={{
-                  fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
-                  fontSize: '2.1rem',
-                  fontWeight: 500,
-                  color: '#FFFFFF',
-                  letterSpacing: '0.04em',
-                  textTransform: 'uppercase',
-                  marginBottom: '16px',
-                  lineHeight: '1.2',
-                }}
-              >
-                {selectedArea.title}
-              </h3>
-
-              {/* Description */}
-              <p
-                style={{
-                  color: '#A0AEC0',
-                  fontSize: '1rem',
-                  lineHeight: '1.65',
-                  marginBottom: '36px',
-                  fontWeight: 400,
-                }}
-              >
-                {selectedArea.description}
-              </p>
-
-              {/* Special layout for Derecho Comercial vs standard columns */}
-              {selectedArea.twoSections ? (
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gap: '40px',
-                    marginBottom: '40px',
-                  }}
-                >
-                  <div>
-                    <h4
-                      style={{
-                        fontSize: '0.78rem',
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: '#6E7C91',
-                        fontWeight: 600,
-                        marginBottom: '18px',
-                      }}
-                    >
-                      {selectedArea.section1Title}
-                    </h4>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                      {selectedArea.section1Items.map((item, idx) => (
-                        <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                          <div
-                            style={{
-                              width: '20px',
-                              height: '20px',
-                              borderRadius: '50%',
-                              border: '1.5px solid rgba(255, 255, 255, 0.4)',
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              color: '#FFFFFF',
-                              flexShrink: 0,
-                            }}
-                          >
-                            <Check size={12} strokeWidth={2} />
-                          </div>
-                          <span style={{ color: '#E6EDF3', fontSize: '0.94rem' }}>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4
-                      style={{
-                        fontSize: '0.78rem',
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: '#6E7C91',
-                        fontWeight: 600,
-                        marginBottom: '18px',
-                      }}
-                    >
-                      {selectedArea.section2Title}
-                    </h4>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                      {selectedArea.section2Items.map((item, idx) => (
-                        <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                          <div
-                            style={{
-                              width: '20px',
-                              height: '20px',
-                              borderRadius: '50%',
-                              border: '1.5px solid rgba(255, 255, 255, 0.4)',
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              color: '#FFFFFF',
-                              flexShrink: 0,
-                            }}
-                          >
-                            <Check size={12} strokeWidth={2} />
-                          </div>
-                          <span style={{ color: '#E6EDF3', fontSize: '0.94rem' }}>{item}</span>
-                        </div>
-                      ))}
-                    </div>
+                    <ChevronDown size={18} strokeWidth={1.5} />
                   </div>
                 </div>
-              ) : (
-                <div>
-                  <h4
-                    style={{
-                      fontSize: '0.78rem',
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: '#6E7C91',
-                      fontWeight: 600,
-                      marginBottom: '20px',
-                    }}
-                  >
-                    {selectedArea.servicesTitle}
-                  </h4>
 
+                {/* Accordion Content Body */}
+                {isOpen && (
                   <div
                     style={{
-                      display: 'grid',
-                      gridTemplateColumns: selectedArea.columns.length > 1 ? '1fr 1fr' : '1fr',
-                      gap: selectedArea.columns.length > 1 ? '30px' : '14px',
-                      marginBottom: '40px',
+                      padding: '32px 36px 40px',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                      animation: 'fadeIn 0.3s ease forwards',
                     }}
                   >
-                    {selectedArea.columns.map((col, colIdx) => (
-                      <div key={colIdx} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                        {col.map((service, sIdx) => (
-                          <div key={sIdx} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                            <div
-                              style={{
-                                width: '20px',
-                                height: '20px',
-                                borderRadius: '50%',
-                                border: '1.5px solid rgba(255, 255, 255, 0.4)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                color: '#FFFFFF',
-                                flexShrink: 0,
-                              }}
-                            >
-                              <Check size={12} strokeWidth={2} />
-                            </div>
-                            <span style={{ color: '#E6EDF3', fontSize: '0.94rem' }}>{service}</span>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
+                    {/* Badge */}
+                    <div
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        padding: '6px 16px',
+                        borderRadius: '20px',
+                        border: '1px solid rgba(255, 255, 255, 0.22)',
+                        background: 'rgba(255, 255, 255, 0.03)',
+                        color: '#D0D7DE',
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.08em',
+                        textTransform: 'uppercase',
+                        marginBottom: '20px',
+                      }}
+                    >
+                      {React.createElement(area.badgeIcon, { size: 14, strokeWidth: 1.5 })}
+                      <span>{area.badge}</span>
+                    </div>
 
-            {/* Bottom Footer Branding Line inside Panel */}
-            <div
-              style={{
-                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-                paddingTop: '20px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '14px',
-                marginTop: '20px',
-              }}
-            >
-              <div
-                style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#FFFFFF',
-                }}
-              >
-                <Landmark size={18} strokeWidth={1.5} />
+                    {/* Description */}
+                    <p
+                      style={{
+                        color: '#A0AEC0',
+                        fontSize: '1.02rem',
+                        lineHeight: '1.65',
+                        marginBottom: '32px',
+                        fontWeight: 400,
+                      }}
+                    >
+                      {area.description}
+                    </p>
+
+                    {/* Services Items Layout */}
+                    {area.twoSections ? (
+                      <div
+                        className="area-services-two-cols"
+                        style={{
+                          display: 'grid',
+                          gridTemplateColumns: '1fr 1fr',
+                          gap: '36px',
+                          marginBottom: '36px',
+                        }}
+                      >
+                        <div>
+                          <h4
+                            style={{
+                              fontSize: '0.78rem',
+                              letterSpacing: '0.12em',
+                              textTransform: 'uppercase',
+                              color: '#6E7C91',
+                              fontWeight: 600,
+                              marginBottom: '18px',
+                            }}
+                          >
+                            {area.section1Title}
+                          </h4>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                            {area.section1Items.map((item, idx) => (
+                              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <div
+                                  style={{
+                                    width: '20px',
+                                    height: '20px',
+                                    borderRadius: '50%',
+                                    border: '1.5px solid rgba(255, 255, 255, 0.4)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#FFFFFF',
+                                    flexShrink: 0,
+                                  }}
+                                >
+                                  <Check size={12} strokeWidth={2} />
+                                </div>
+                                <span style={{ color: '#E6EDF3', fontSize: '0.95rem' }}>{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <h4
+                            style={{
+                              fontSize: '0.78rem',
+                              letterSpacing: '0.12em',
+                              textTransform: 'uppercase',
+                              color: '#6E7C91',
+                              fontWeight: 600,
+                              marginBottom: '18px',
+                            }}
+                          >
+                            {area.section2Title}
+                          </h4>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                            {area.section2Items.map((item, idx) => (
+                              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                <div
+                                  style={{
+                                    width: '20px',
+                                    height: '20px',
+                                    borderRadius: '50%',
+                                    border: '1.5px solid rgba(255, 255, 255, 0.4)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: '#FFFFFF',
+                                    flexShrink: 0,
+                                  }}
+                                >
+                                  <Check size={12} strokeWidth={2} />
+                                </div>
+                                <span style={{ color: '#E6EDF3', fontSize: '0.95rem' }}>{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        <h4
+                          style={{
+                            fontSize: '0.78rem',
+                            letterSpacing: '0.12em',
+                            textTransform: 'uppercase',
+                            color: '#6E7C91',
+                            fontWeight: 600,
+                            marginBottom: '20px',
+                          }}
+                        >
+                          {area.servicesTitle}
+                        </h4>
+
+                        <div
+                          className="area-services-two-cols"
+                          style={{
+                            display: 'grid',
+                            gridTemplateColumns: area.columns.length > 1 ? '1fr 1fr' : '1fr',
+                            gap: area.columns.length > 1 ? '30px' : '14px',
+                            marginBottom: '36px',
+                          }}
+                        >
+                          {area.columns.map((col, colIdx) => (
+                            <div key={colIdx} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                              {col.map((service, sIdx) => (
+                                <div key={sIdx} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                  <div
+                                    style={{
+                                      width: '20px',
+                                      height: '20px',
+                                      borderRadius: '50%',
+                                      border: '1.5px solid rgba(255, 255, 255, 0.4)',
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      justifyContent: 'center',
+                                      color: '#FFFFFF',
+                                      flexShrink: 0,
+                                    }}
+                                  >
+                                    <Check size={12} strokeWidth={2} />
+                                  </div>
+                                  <span style={{ color: '#E6EDF3', fontSize: '0.95rem' }}>{service}</span>
+                                </div>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Bottom Footer Branding Line inside Accordion Item */}
+                    <div
+                      style={{
+                        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                        paddingTop: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '14px',
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: '32px',
+                          height: '32px',
+                          borderRadius: '8px',
+                          border: '1px solid rgba(255, 255, 255, 0.15)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: '#FFFFFF',
+                        }}
+                      >
+                        <Landmark size={16} strokeWidth={1.5} />
+                      </div>
+                      <span style={{ fontSize: '0.85rem', color: '#8A99AD', fontWeight: 500 }}>
+                        Estudio Coronel & Asociados
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
-              <span style={{ fontSize: '0.85rem', color: '#8A99AD', fontWeight: 500 }}>
-                Estudio Coronel & Asociados
-              </span>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

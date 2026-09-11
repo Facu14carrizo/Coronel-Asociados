@@ -188,7 +188,24 @@ const Footer = ({ setActiveTab }) => {
           }}
         >
           <span>© {new Date().getFullYear()} Estudio Jurídico Coronel & Asociados. Todos los derechos reservados.</span>
-          <span>Desarrollado con Excelencia Jurídica & Diseño Vanguardista</span>
+          <span>
+            Desarrollado por{' '}
+            <a
+              href="https://waveframe.com.ar"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: '#FFFFFF',
+                fontWeight: 600,
+                textDecoration: 'none',
+                transition: 'opacity 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+            >
+              WaveFrame Studio
+            </a>
+          </span>
         </div>
       </div>
     </footer>

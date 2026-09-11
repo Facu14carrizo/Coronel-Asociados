@@ -306,6 +306,48 @@ body {
   }
 }
 
+/* Mobile Practice Areas Carousel / Tabs & Card Optimizations */
+@media (max-width: 991px) {
+  .area-tabs-mobile-container {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    gap: 10px !important;
+    padding-bottom: 12px !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+  .area-tabs-mobile-container::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  .area-tab-mobile-item {
+    flex: 0 0 auto !important;
+    min-width: 220px !important;
+    padding: 14px 18px !important;
+    gap: 12px !important;
+  }
+  .area-tab-mobile-item h3 {
+    font-size: 0.88rem !important;
+    white-space: nowrap;
+  }
+  .area-tab-mobile-item div {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .area-detail-mobile-card {
+    padding: 24px 20px !important;
+    min-height: auto !important;
+  }
+  .area-detail-mobile-card h3 {
+    font-size: 1.6rem !important;
+  }
+  .area-services-two-cols {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
 /* Hero Section responsive background & overlay */
 .hero-section {
   position: relative;
