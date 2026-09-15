@@ -23,49 +23,11 @@ const Footer = ({ setActiveTab }) => {
           {/* Col 1: Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
-              {/* Clean Premium Laurel Wreath Emblem matching Navbar */}
-              <svg
-                width="40"
-                height="40"
-                viewBox="0 0 100 100"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ flexShrink: 0 }}
-              >
-                <path
-                  d="M 50 90 C 26 90 12 70 12 48 C 12 30 22 16 36 10"
-                  stroke="#FFFFFF"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M 50 90 C 74 90 88 70 88 48 C 88 30 78 16 64 10"
-                  stroke="#FFFFFF"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-                <path d="M 22 75 C 16 70 15 62 20 58 C 22 64 28 68 22 75 Z" fill="#FFFFFF" />
-                <path d="M 14 56 C 10 49 11 41 17 38 C 18 44 23 50 14 56 Z" fill="#FFFFFF" />
-                <path d="M 18 36 C 16 28 20 21 27 20 C 26 26 29 32 18 36 Z" fill="#FFFFFF" />
-                <path d="M 30 20 C 30 12 36 7 43 9 C 40 15 41 22 30 20 Z" fill="#FFFFFF" />
-                <path d="M 78 75 C 84 70 85 62 80 58 C 78 64 72 68 78 75 Z" fill="#FFFFFF" />
-                <path d="M 86 56 C 90 49 89 41 83 38 C 82 44 77 50 86 56 Z" fill="#FFFFFF" />
-                <path d="M 82 36 C 84 28 80 21 73 20 C 74 26 71 32 82 36 Z" fill="#FFFFFF" />
-                <path d="M 70 20 C 70 12 64 7 57 9 C 60 15 59 22 70 20 Z" fill="#FFFFFF" />
-                <path d="M 44 88 L 50 93 L 56 88" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                <text
-                  x="50"
-                  y="53"
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fill="#FFFFFF"
-                  fontFamily="'Cinzel', 'Playfair Display', Georgia, serif"
-                  fontSize="40"
-                  fontWeight="600"
-                >
-                  C
-                </text>
-              </svg>
+              <img
+                src="/assets/nicologo.png"
+                alt="Coronel & Asociados Logo"
+                style={{ height: '44px', width: 'auto', objectFit: 'contain', flexShrink: 0 }}
+              />
 
               <div>
                 <span
@@ -152,11 +114,12 @@ const Footer = ({ setActiveTab }) => {
               Especializaciones
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem' }}>
-              <li>Derecho Corporativo & Empresa</li>
-              <li>Litigios Complejos & Arbitraje</li>
-              <li>Derecho Civil & Patrimonial</li>
-              <li>Derecho Laboral Empresario</li>
-              <li>Derecho Administrativo & Regulatorio</li>
+              <li>Derecho Laboral</li>
+              <li>Derecho de Familia</li>
+              <li>Derecho Sucesorio</li>
+              <li>Derecho Comercial</li>
+              <li>Derecho Previsional</li>
+              <li>Derecho de la Salud</li>
             </ul>
           </div>
 
@@ -184,12 +147,13 @@ const Footer = ({ setActiveTab }) => {
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
+            gap: '16px',
             fontSize: '0.82rem',
           }}
         >
           <span>© {new Date().getFullYear()} Estudio Jurídico Coronel & Asociados. Todos los derechos reservados.</span>
-          <span>
-            Desarrollado por{' '}
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <span>Desarrollado por</span>
             <a
               href="https://waveframe.com.ar"
               target="_blank"
@@ -205,6 +169,22 @@ const Footer = ({ setActiveTab }) => {
             >
               WaveFrame Studio
             </a>
+            <model-viewer
+              src="/3D/waveframelogo3dmodel.glb"
+              alt="WaveFrame Studio Logo 3D"
+              auto-rotate
+              rotation-per-second="120deg"
+              camera-controls
+              disable-zoom
+              interaction-prompt="none"
+              style={{
+                width: '38px',
+                height: '38px',
+                background: 'transparent',
+                display: 'inline-block',
+                verticalAlign: 'middle',
+              }}
+            ></model-viewer>
           </span>
         </div>
       </div>

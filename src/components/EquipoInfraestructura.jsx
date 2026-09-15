@@ -1,5 +1,4 @@
-import React from 'react';
-import { GraduationCap, Award, Shield, Cpu, MapPin, Building, Users, CheckCircle } from 'lucide-react';
+import { GraduationCap, Shield } from 'lucide-react';
 
 const EquipoInfraestructura = () => {
   return (
@@ -39,7 +38,7 @@ const EquipoInfraestructura = () => {
             border: '1px solid rgba(255, 255, 255, 0.08)',
             borderRadius: '16px',
             overflow: 'hidden',
-            marginBottom: '70px',
+            marginBottom: 0,
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
             alignItems: 'stretch',
@@ -171,94 +170,6 @@ const EquipoInfraestructura = () => {
                 <span style={{ fontSize: '0.92rem', color: '#E6EDF3', lineHeight: '1.3' }}>
                   Miembro CPACF, CASI
                 </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Academic Heritage & Office Infrastructure Showcase */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
-          {/* Card 1: Sello UBA */}
-          <div className="glass-panel" style={{ padding: '32px', borderRadius: '14px' }}>
-            <div
-              style={{
-                width: '100%',
-                height: '200px',
-                borderRadius: '10px',
-                overflow: 'hidden',
-                marginBottom: '24px',
-              }}
-            >
-              <img
-                src="/assets/uba_faculty.png"
-                alt="Facultad de Derecho UBA"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            </div>
-            <h3 style={{ fontFamily: 'var(--font-serif-luxury)', fontSize: '1.4rem', color: '#FFF', marginBottom: '12px' }}>
-              Herencia Académica UBA
-            </h3>
-            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.94rem', lineHeight: '1.6' }}>
-              Nuestros profesionales se forman en las aulas más rigurosas del país. La Facultad de Derecho de la UBA aporta el respaldo dogmático y el pensamiento crítico esencial para liderar casos sin margen de error.
-            </p>
-          </div>
-
-          {/* Card 2: Modern Office */}
-          <div className="glass-panel" style={{ padding: '32px', borderRadius: '14px' }}>
-            <div
-              style={{
-                width: '100%',
-                height: '200px',
-                borderRadius: '10px',
-                overflow: 'hidden',
-                marginBottom: '24px',
-              }}
-            >
-              <img
-                src="/assets/office.png"
-                alt="Oficinas Ejecutivas Coronel & Asociados"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            </div>
-            <h3 style={{ fontFamily: 'var(--font-serif-luxury)', fontSize: '1.4rem', color: '#FFF', marginBottom: '12px' }}>
-              Infraestructura & Salas Ejecutivas
-            </h3>
-            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.94rem', lineHeight: '1.6' }}>
-              Ubicados en zona estratégica de Buenos Aires, contamos con salas privadas de negociación, alta confidencialidad y tecnología de videoconferencia cifrada para clientes corporativos e internacionales.
-            </p>
-          </div>
-
-          {/* Card 3: LegalTech & Data */}
-          <div className="glass-panel" style={{ padding: '32px', borderRadius: '14px' }}>
-            <div
-              style={{
-                width: '50px',
-                height: '50px',
-                borderRadius: '10px',
-                background: 'rgba(0, 180, 216, 0.15)',
-                color: 'var(--color-teal-accent)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '24px',
-              }}
-            >
-              <Cpu size={28} />
-            </div>
-            <h3 style={{ fontFamily: 'var(--font-serif-luxury)', fontSize: '1.4rem', color: '#FFF', marginBottom: '12px' }}>
-              Tecnología Legal & Datos
-            </h3>
-            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.94rem', lineHeight: '1.6', marginBottom: '20px' }}>
-              Implementamos análisis predictivo de fallos judiciales, auditoría digital de expedientes y actualización de novedades procesales en tiempo real.
-            </p>
-            <div style={{ display: 'grid', gap: '10px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#CBD5E1' }}>
-                <CheckCircle size={16} style={{ color: 'var(--color-teal-accent)' }} />
-                <span>Seguimiento en línea de causas</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#CBD5E1' }}>
-                <CheckCircle size={16} style={{ color: 'var(--color-teal-accent)' }} />
-                <span>Cifrado de documentos confidenciales</span>
               </div>
             </div>
           </div>

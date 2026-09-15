@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ShieldCheck, TrendingUp, Scale, ArrowRight } from 'lucide-react';
+import { Award, Scale, ShieldCheck, ArrowRight, FileText, Briefcase } from 'lucide-react';
 
 const HeroBanner = ({ setActiveTab }) => {
   return (
@@ -53,11 +53,10 @@ const HeroBanner = ({ setActiveTab }) => {
             }}
           >
             ESTUDIO JURÍDICO <br />
-            CORONEL & <br />
-            ASOCIADOS
+            CORONEL & ASOCIADOS
           </h1>
 
-          {/* Subtitle Strategy Fusion */}
+          {/* Subtitle */}
           <p
             style={{
               fontSize: 'clamp(1rem, 1.8vw, 1.18rem)',
@@ -69,7 +68,7 @@ const HeroBanner = ({ setActiveTab }) => {
               maxWidth: '680px',
             }}
           >
-            Fusionamos el rigor técnico y el prestigio de la <strong style={{ color: '#FFFFFF', fontWeight: 600 }}>escuela UBA</strong> con la agilidad estratégica moderna y el análisis cuantitativo corporativo. Resguardamos su patrimonio, empresas e intereses de alta complejidad.
+            Brindamos asesoramiento jurídico serio y personalizado, adaptado a las necesidades de cada cliente. Somos profesionales egresados de la Universidad de Buenos Aires y contamos con un equipo especializado en diversas áreas del Derecho. Ofrecemos un trato cercano y directo, buscando soluciones eficaces para cada caso.
           </p>
 
           {/* CTAs */}
@@ -104,6 +103,7 @@ const HeroBanner = ({ setActiveTab }) => {
                 transition: 'all 0.25s ease',
               }}
             >
+              <FileText size={18} />
               <span>Solicitar Evaluación de Caso</span>
               <ArrowRight size={18} />
             </button>
@@ -129,6 +129,7 @@ const HeroBanner = ({ setActiveTab }) => {
                 transition: 'all 0.25s ease',
               }}
             >
+              <Briefcase size={18} />
               <span>Explorar Áreas de Práctica</span>
             </button>
           </div>
@@ -157,11 +158,11 @@ const HeroBanner = ({ setActiveTab }) => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
                 <Scale style={{ color: '#FFFFFF', flexShrink: 0 }} size={24} strokeWidth={1.5} />
                 <h3 style={{ fontSize: '0.95rem', fontFamily: 'var(--font-serif-luxury)', color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                  Autoridad UBA
+                  FORMACIÓN UBA
                 </h3>
               </div>
               <p style={{ fontSize: '0.86rem', color: '#94A3B8', lineHeight: '1.55' }}>
-                Formación en la principal casa de estudios jurídicos de la Argentina. Solvencia técnica intachable.
+                Formación en la Facultad de Derecho más importante de Argentina.
               </p>
             </div>
 
@@ -180,34 +181,11 @@ const HeroBanner = ({ setActiveTab }) => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
                 <ShieldCheck style={{ color: '#FFFFFF', flexShrink: 0 }} size={24} strokeWidth={1.5} />
                 <h3 style={{ fontSize: '0.95rem', fontFamily: 'var(--font-serif-luxury)', color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                  Transparencia Absoluta
+                  TRANSPARENCIA ABSOLUTA
                 </h3>
               </div>
               <p style={{ fontSize: '0.86rem', color: '#94A3B8', lineHeight: '1.55' }}>
-                Informes en tiempo real y honorarios pactados con máxima previsibilidad y ética profesional.
-              </p>
-            </div>
-
-            <div
-              className="hero-glass-card"
-              style={{
-                background: 'rgba(8, 14, 24, 0.55)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                borderRadius: '12px',
-                padding: '24px 22px',
-                transition: 'all 0.3s ease',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                <TrendingUp style={{ color: '#FFFFFF', flexShrink: 0 }} size={24} strokeWidth={1.5} />
-                <h3 style={{ fontSize: '0.95rem', fontFamily: 'var(--font-serif-luxury)', color: '#FFFFFF', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                  Éxito Cuantitativo
-                </h3>
-              </div>
-              <p style={{ fontSize: '0.86rem', color: '#94A3B8', lineHeight: '1.55' }}>
-                +94% de efectividad litigiosa y resolución corporativa eficiente respaldada por datos.
+                Información periódica sobre el proceso y honorarios claros desde el inicio, para mayor previsibilidad y confianza.
               </p>
             </div>
           </div>
