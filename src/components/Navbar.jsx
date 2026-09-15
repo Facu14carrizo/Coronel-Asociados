@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone } from 'lucide-react';
 
 const Navbar = ({ activeTab, setActiveTab }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +21,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 
   const handleNavClick = (id) => {
     setActiveTab(id);
-    setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -147,7 +145,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
           })}
         </nav>
 
-        {/* Right CTA Button */}
+        {/* Right CTA Button (Phone button on desktop and mobile) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }} className="nav-actions-container">
           <button
             onClick={() => handleNavClick('contacto')}
@@ -171,62 +169,8 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             <Phone size={15} strokeWidth={1.75} />
             <span className="nav-cta-text">Consulta Urgente</span>
           </button>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#FFF',
-              cursor: 'pointer',
-              display: 'none',
-            }}
-            className="mobile-menu-toggle"
-          >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
-          </button>
         </div>
       </div>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '100%',
-            left: 0,
-            right: 0,
-            background: 'rgba(5, 8, 14, 0.98)',
-            backdropFilter: 'blur(20px)',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.15)',
-            padding: '20px 24px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '12px',
-            boxShadow: '0 15px 30px rgba(0, 0, 0, 0.6)',
-          }}
-        >
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavClick(item.id)}
-              style={{
-                background: activeTab === item.id ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
-                color: '#FFFFFF',
-                border: activeTab === item.id ? '1px solid rgba(255, 255, 255, 0.3)' : '1px solid transparent',
-                padding: '12px 16px',
-                textAlign: 'left',
-                borderRadius: '8px',
-                fontSize: '1rem',
-                fontWeight: 600,
-              }}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      )}
     </header>
   );
 };

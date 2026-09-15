@@ -52,8 +52,7 @@ const HeroBanner = ({ setActiveTab }) => {
               textTransform: 'uppercase',
             }}
           >
-            ESTUDIO JURÍDICO <br />
-            CORONEL & ASOCIADOS
+            ESTUDIO JURÍDICO
           </h1>
 
           {/* Subtitle */}

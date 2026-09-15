@@ -180,6 +180,9 @@ const Footer = ({ setActiveTab }) => {
               style={{
                 width: '38px',
                 height: '38px',
+                minWidth: '38px',
+                minHeight: '38px',
+                flexShrink: 0,
                 background: 'transparent',
                 display: 'inline-block',
                 verticalAlign: 'middle',
