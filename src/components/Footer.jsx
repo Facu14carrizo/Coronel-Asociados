@@ -24,8 +24,10 @@ const Footer = ({ setActiveTab }) => {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '20px' }}>
               <img
-                src="/assets/nicologo.png"
+                src="/assets/nicologo.webp"
                 alt="Coronel & Asociados Logo"
+                loading="lazy"
+                decoding="async"
                 style={{ height: '44px', width: 'auto', objectFit: 'contain', flexShrink: 0 }}
               />
 

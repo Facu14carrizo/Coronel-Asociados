@@ -9,7 +9,7 @@ const teamMembers = [
     matrícula: 'Matrícula CPACF • CASI • FEDERAL',
     specialty: 'Derecho Laboral & Empresario',
     description: 'Abogado graduado de la UBA, especializado en asesoramiento jurídico a empresas, PYMEs y trabajadores en materia Laboral.',
-    image: '/assets/founder.png',
+    image: '/assets/founder.webp',
   },
   {
     id: 'zalazar',
@@ -19,7 +19,7 @@ const teamMembers = [
     matrícula: 'Matrícula CPACF',
     specialty: 'Derecho Corporativo & Laboral',
     description: 'Abogada graduada de la UBA, especializada en el asesoramiento jurídico a empresas nacionales e internacionales en materia Corporativa y Laboral.',
-    image: '/assets/asociados/a2/a2.png',
+    image: '/assets/asociados/a2/a2.webp',
   },
   {
     id: 'massarutto',
@@ -29,7 +29,7 @@ const teamMembers = [
     matrícula: 'Matrícula CPACF • CASI • FEDERAL',
     specialty: 'Derecho de la Salud & Previsional',
     description: 'Abogada graduada de la UBA, especialista en amparos de salud, continuidad de obra social, prepagas, PAMI, geriatría y asuntos previsionales.',
-    image: '/assets/asociados/a3/a33.png',
+    image: '/assets/asociados/a3/a33.webp',
   },
   {
     id: 'cutello',
@@ -39,7 +39,7 @@ const teamMembers = [
     matrícula: 'Matrícula CPACF',
     specialty: 'Derecho Civil & Penal',
     description: 'Abogado graduado de la UBA, con experiencia en derecho civil y penal enfocado en asesoramiento a individuos, PYMEs y empresas.',
-    image: '/assets/asociados/a4/a44.png',
+    image: '/assets/asociados/a4/a44.webp',
   },
   {
     id: 'rossi',
@@ -49,7 +49,7 @@ const teamMembers = [
     matrícula: 'Matrícula CPACF • CASI',
     specialty: 'Derecho Comercial & Societario',
     description: 'Especializado en derecho comercial, contrataciones societarias y estructuración patrimonial corporativa de alta complejidad.',
-    image: '/assets/team_3.png',
+    image: '/assets/team_3.webp',
   },
 ];
 
@@ -119,6 +119,8 @@ const EquipoInfraestructura = () => {
                 <img
                   src={member.image}
                   alt={member.name}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
                     height: '100%',
