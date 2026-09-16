@@ -303,42 +303,33 @@ const Contacto = () => {
             <div
               style={{
                 display: 'flex',
-                justifyContent: 'flex-end',
-                alignItems: 'flex-start',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                width: '100%',
                 zIndex: 5,
                 position: 'relative',
                 pointerEvents: 'none',
               }}
             >
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
-                <h3
-                  style={{
-                    fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
-                    fontSize: '1.35rem',
-                    fontWeight: 500,
-                    color: '#FFFFFF',
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                    margin: 0,
-                  }}
-                >
-                  UBICACIÓN DEL ESTUDIO
-                </h3>
-                <span
-                  style={{
-                    border: '1px solid rgba(255, 255, 255, 0.4)',
-                    borderRadius: '20px',
-                    padding: '4px 14px',
-                    fontSize: '0.75rem',
-                    color: '#FFFFFF',
-                    letterSpacing: '0.08em',
-                    fontWeight: 600,
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  ZONA NORTE
-                </span>
-              </div>
+              <h3
+                style={{
+                  fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+                  fontSize: '1.25rem',
+                  fontWeight: 500,
+                  color: '#FFFFFF',
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase',
+                  margin: 0,
+                  background: 'rgba(5, 8, 14, 0.2)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
+                  padding: '6px 16px',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                }}
+              >
+                UBICACIÓN DEL ESTUDIO
+              </h3>
             </div>
 
             {/* Dark Styled Google Maps Background */}
@@ -362,26 +353,6 @@ const Contacto = () => {
                 allowFullScreen=""
                 loading="lazy"
               ></iframe>
-            </div>
-
-            {/* Custom Location Marker Pin overlay */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '52%',
-                left: '66%',
-                transform: 'translate(-50%, -100%)',
-                zIndex: 4,
-                pointerEvents: 'none',
-              }}
-            >
-              <svg width="42" height="52" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M12 0C5.37 0 0 5.37 0 12C0 21 12 30 12 30C12 30 24 21 24 12C24 5.37 18.63 0 12 0Z"
-                  fill="#FFFFFF"
-                />
-                <circle cx="12" cy="11" r="4" fill="#0D1117" />
-              </svg>
             </div>
 
             {/* Bottom Subtle "Cómo Llegar" Button */}

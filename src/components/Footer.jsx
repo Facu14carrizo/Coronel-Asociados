@@ -173,7 +173,7 @@ const Footer = ({ setActiveTab }) => {
               src="/3D/waveframelogo3dmodel.glb"
               alt="WaveFrame Studio Logo 3D"
               auto-rotate
-              rotation-per-second="120deg"
+              rotation-per-second="50deg"
               camera-controls
               disable-zoom
               interaction-prompt="none"

@@ -3,12 +3,12 @@ import { GraduationCap, Award } from 'lucide-react';
 const teamMembers = [
   {
     id: 'coronel',
-    name: 'DR. NICOLÁS A. CORONEL',
+    name: 'DR. NICOLÁS CORONEL',
     role: 'SOCIO FUNDADOR',
     subtitle: 'Abogado (Universidad de Buenos Aires)',
-    matrícula: 'Matrícula CPACF • CASI',
+    matrícula: 'Matrícula CPACF • CASI • FEDERAL',
     specialty: 'Derecho Laboral & Empresario',
-    description: 'Graduado en la Facultad de Derecho UBA. Especializado en derecho laboral para asesoramiento a empresas, PYMEs y trabajadores.',
+    description: 'Abogado graduado de la UBA, especializado en asesoramiento jurídico a empresas, PYMEs y trabajadores en materia Laboral.',
     image: '/assets/founder.png',
   },
   {
@@ -25,10 +25,10 @@ const teamMembers = [
     id: 'massarutto',
     name: 'DRA. PATRICIA MASSARUTTO',
     role: 'ESPECIALISTA SENIOR',
-    subtitle: 'Abogada (Facultad de Derecho UBA)',
-    matrícula: 'Matrícula CPACF • CASI',
+    subtitle: 'Abogada (Universidad de Buenos Aires)',
+    matrícula: 'Matrícula CPACF • CASI • FEDERAL',
     specialty: 'Derecho de la Salud & Previsional',
-    description: 'Especialista en Amparos de salud, continuidad de Obra Social, Prepagas, PAMI, geriatría y asuntos previsionales.',
+    description: 'Abogada graduada de la UBA, especialista en amparos de salud, continuidad de obra social, prepagas, PAMI, geriatría y asuntos previsionales.',
     image: '/assets/asociados/a3/a33.png',
   },
   {
@@ -38,7 +38,7 @@ const teamMembers = [
     subtitle: 'Abogado (Universidad de Buenos Aires)',
     matrícula: 'Matrícula CPACF',
     specialty: 'Derecho Civil & Penal',
-    description: 'Abogado graduado de la UBA con experiencia en derecho civil y derecho penal enfocado en asesoramiento a individuos, PYMEs y empresas.',
+    description: 'Abogado graduado de la UBA, con experiencia en derecho civil y penal enfocado en asesoramiento a individuos, PYMEs y empresas.',
     image: '/assets/asociados/a4/a44.png',
   },
   {
