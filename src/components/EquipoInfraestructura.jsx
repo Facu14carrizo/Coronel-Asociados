@@ -1,8 +1,62 @@
-import { GraduationCap, Shield } from 'lucide-react';
+import { GraduationCap, Award } from 'lucide-react';
+
+const teamMembers = [
+  {
+    id: 'coronel',
+    name: 'DR. NICOLÁS A. CORONEL',
+    role: 'SOCIO FUNDADOR',
+    subtitle: 'Abogado (Universidad de Buenos Aires)',
+    matrícula: 'Matrícula CPACF • CASI',
+    specialty: 'Derecho Laboral & Empresario',
+    description: 'Graduado en la Facultad de Derecho UBA. Especializado en derecho laboral para asesoramiento a empresas, PYMEs y trabajadores.',
+    image: '/assets/founder.png',
+  },
+  {
+    id: 'zalazar',
+    name: 'DRA. MICAELA ZALAZAR',
+    role: 'SOCIA JURÍDICA',
+    subtitle: 'Abogada (Universidad de Buenos Aires)',
+    matrícula: 'Matrícula CPACF',
+    specialty: 'Derecho Corporativo & Laboral',
+    description: 'Abogada graduada de la UBA, especializada en el asesoramiento jurídico a empresas nacionales e internacionales en materia Corporativa y Laboral.',
+    image: '/assets/asociados/a2/a2.png',
+  },
+  {
+    id: 'massarutto',
+    name: 'DRA. PATRICIA MASSARUTTO',
+    role: 'ESPECIALISTA SENIOR',
+    subtitle: 'Abogada (Facultad de Derecho UBA)',
+    matrícula: 'Matrícula CPACF • CASI',
+    specialty: 'Derecho de la Salud & Previsional',
+    description: 'Especialista en Amparos de salud, continuidad de Obra Social, Prepagas, PAMI, geriatría y asuntos previsionales.',
+    image: '/assets/asociados/a3/a33.png',
+  },
+  {
+    id: 'cutello',
+    name: 'DR. TOMÁS CUTELLO',
+    role: 'ASOCIADO SENIOR',
+    subtitle: 'Abogado (Universidad de Buenos Aires)',
+    matrícula: 'Matrícula CPACF',
+    specialty: 'Derecho Civil & Penal',
+    description: 'Abogado graduado de la UBA con experiencia en derecho civil y derecho penal enfocado en asesoramiento a individuos, PYMEs y empresas.',
+    image: '/assets/asociados/a4/a44.png',
+  },
+  {
+    id: 'rossi',
+    name: 'DR. MATÍAS E. ROSSI',
+    role: 'SOCIO CORPORATIVO',
+    subtitle: 'Abogado (Universidad de Buenos Aires)',
+    matrícula: 'Matrícula CPACF • CASI',
+    specialty: 'Derecho Comercial & Societario',
+    description: 'Especializado en derecho comercial, contrataciones societarias y estructuración patrimonial corporativa de alta complejidad.',
+    image: '/assets/team_3.png',
+  },
+];
 
 const EquipoInfraestructura = () => {
   return (
     <section
+      id="equipo"
       style={{
         padding: '100px 0',
         background: 'var(--color-bg-dark)',
@@ -24,155 +78,130 @@ const EquipoInfraestructura = () => {
               marginBottom: '18px',
             }}
           >
-            Equipo Jurídico e Infraestructura Boutique
+            NUESTRO EQUIPO JURÍDICO
           </h2>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '1.05rem', lineHeight: '1.6' }}>
-            Combina el respaldo institucional de la <strong style={{ color: '#FFF' }}>Facultad de Derecho UBA</strong> con salas de conferencia ejecutivas y tecnología de análisis legal de última generación.
+            Abogados egresados de la <strong style={{ color: '#FFF' }}>Universidad de Buenos Aires (UBA)</strong> con amplia trayectoria en asesoramiento corporativo, litigios complejos y resguardo patrimonial.
           </p>
         </div>
 
-        {/* Founder Feature Highlight Card */}
+        {/* 5 Team Members Equal Grid */}
         <div
           style={{
-            background: '#0D1117',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            marginBottom: 0,
             display: 'grid',
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            alignItems: 'stretch',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
+            gap: '24px',
           }}
-          className="responsive-grid-12"
         >
-          {/* Photo */}
-          <div
-            style={{ gridColumn: 'span 5', height: '100%', minHeight: '400px' }}
-            className="founder-photo-col col-span-5-resp"
-          >
-            <img
-              src="/assets/founder.png"
-              alt="Socio Fundador Dr. Nicolás Alberto Coronel"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                display: 'block',
-              }}
-            />
-          </div>
-
-          {/* Bio Info */}
-          <div
-            style={{
-              gridColumn: 'span 7',
-              padding: '48px 44px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-            }}
-            className="founder-bio-col col-span-7-resp padding-mobile-lg"
-          >
-            <div>
-              <span
-                style={{
-                  color: '#8A99AD',
-                  fontSize: '0.78rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                  display: 'block',
-                  marginBottom: '12px',
-                }}
-              >
-                SOCIO FUNDADOR
-              </span>
-              <h3
-                style={{
-                  fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
-                  fontSize: '2.4rem',
-                  fontWeight: 500,
-                  color: '#FFFFFF',
-                  letterSpacing: '0.04em',
-                  textTransform: 'uppercase',
-                  marginBottom: '20px',
-                  lineHeight: '1.15',
-                }}
-              >
-                NICOLÁS ALBERTO CORONEL
-              </h3>
-
-              <p style={{ color: '#E6EDF3', fontWeight: 400, fontSize: '1rem', marginBottom: '8px' }}>
-                Abogado (Abogacía - Universidad de Buenos Aires)
-              </p>
-              <p style={{ color: '#E6EDF3', fontWeight: 400, fontSize: '1rem', marginBottom: '28px' }}>
-                Matrícula CPACF • Matrícula CASI
-              </p>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '36px' }}>
-                <p style={{ color: '#A0AEC0', lineHeight: '1.65', fontSize: '0.98rem' }}>
-                  Graduado en la Facultad de Derecho de la Universidad de Buenos Aires.
-                </p>
-                <p style={{ color: '#A0AEC0', lineHeight: '1.65', fontSize: '0.98rem' }}>
-                  Especializado en derecho laboral para asesoramiento a empresas, PYMEs y trabajadores.
-                </p>
-              </div>
-            </div>
-
-            {/* Bottom Badges Divider & Icons */}
+          {teamMembers.map((member) => (
             <div
+              key={member.id}
               style={{
-                borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-                paddingTop: '24px',
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '24px',
+                background: '#0D1117',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'all 0.3s ease',
               }}
-              className="inputs-grid-responsive"
+              className="hero-glass-card"
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              {/* Image Header */}
+              <div
+                style={{
+                  width: '100%',
+                  height: '280px',
+                  overflow: 'hidden',
+                  position: 'relative',
+                }}
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center top',
+                    display: 'block',
+                    transition: 'transform 0.4s ease',
+                  }}
+                />
                 <div
                   style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '10px',
-                    border: '1px solid rgba(255, 255, 255, 0.15)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    position: 'absolute',
+                    top: '14px',
+                    left: '14px',
+                    background: 'rgba(5, 8, 14, 0.88)',
+                    backdropFilter: 'blur(8px)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    borderRadius: '20px',
+                    padding: '4px 12px',
+                    fontSize: '0.68rem',
                     color: '#FFFFFF',
-                    flexShrink: 0,
+                    fontWeight: 600,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
                   }}
                 >
-                  <GraduationCap size={22} strokeWidth={1.5} />
+                  {member.role}
                 </div>
-                <span style={{ fontSize: '0.92rem', color: '#E6EDF3', lineHeight: '1.3' }}>
-                  Egresado Facultad de Derecho UBA
-                </span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              {/* Body Info */}
+              <div
+                style={{
+                  padding: '24px 20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flexGrow: 1,
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div>
+                  <h3
+                    style={{
+                      fontFamily: "'Cinzel', 'Playfair Display', Georgia, serif",
+                      fontSize: '1.15rem',
+                      fontWeight: 600,
+                      color: '#FFFFFF',
+                      letterSpacing: '0.03em',
+                      textTransform: 'uppercase',
+                      marginBottom: '8px',
+                      lineHeight: '1.25',
+                    }}
+                  >
+                    {member.name}
+                  </h3>
+                  <p style={{ color: '#E6EDF3', fontSize: '0.84rem', marginBottom: '4px', fontWeight: 400 }}>
+                    {member.subtitle}
+                  </p>
+                  <p style={{ color: '#8A99AD', fontSize: '0.78rem', marginBottom: '14px', fontWeight: 500 }}>
+                    {member.matrícula}
+                  </p>
+                  <p style={{ color: '#A0AEC0', fontSize: '0.84rem', lineHeight: '1.55', marginBottom: '18px' }}>
+                    {member.description}
+                  </p>
+                </div>
+
                 <div
                   style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '10px',
-                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                    paddingTop: '14px',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#FFFFFF',
-                    flexShrink: 0,
+                    gap: '8px',
                   }}
                 >
-                  <Shield size={22} strokeWidth={1.5} />
+                  <Award size={16} style={{ color: '#FFFFFF', flexShrink: 0 }} />
+                  <span style={{ fontSize: '0.82rem', color: '#CBD5E1', fontWeight: 500 }}>
+                    {member.specialty}
+                  </span>
                 </div>
-                <span style={{ fontSize: '0.92rem', color: '#E6EDF3', lineHeight: '1.3' }}>
-                  Miembro CPACF, CASI
-                </span>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
