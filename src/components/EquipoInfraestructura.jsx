@@ -85,17 +85,12 @@ const EquipoInfraestructura = () => {
           </p>
         </div>
 
-        {/* 5 Team Members Equal Grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
-            gap: '24px',
-          }}
-        >
+        {/* 5 Team Members Pyramid Grid */}
+        <div className="team-pyramid-grid">
           {teamMembers.map((member) => (
             <div
               key={member.id}
+              className="team-card hero-glass-card"
               style={{
                 background: '#0D1117',
                 border: '1px solid rgba(255, 255, 255, 0.08)',
@@ -105,7 +100,6 @@ const EquipoInfraestructura = () => {
                 flexDirection: 'column',
                 transition: 'all 0.3s ease',
               }}
-              className="hero-glass-card"
             >
               {/* Image Header */}
               <div

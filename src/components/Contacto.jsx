@@ -214,18 +214,22 @@ const Contacto = () => {
                     >
                       CORREO ELECTRÓNICO
                     </span>
-                    <p
+                    <a
+                      href="mailto:coronel.asociados.estudio@gmail.com"
                       className="contact-value-text"
                       style={{
                         color: '#FFFFFF',
                         fontWeight: 500,
-                        fontSize: '0.92rem',
+                        fontSize: 'clamp(0.78rem, 2.5vw, 0.92rem)',
                         marginTop: '4px',
-                        wordBreak: 'break-all',
+                        display: 'block',
+                        textDecoration: 'none',
+                        wordBreak: 'break-word',
+                        overflowWrap: 'anywhere',
                       }}
                     >
                       coronel.asociados.estudio@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </div>
 
