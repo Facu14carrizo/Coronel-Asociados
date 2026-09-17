@@ -5,8 +5,8 @@ const Footer = ({ setActiveTab }) => {
   return (
     <footer
       style={{
-        background: '#06080B',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        background: '#05070A',
+        borderTop: '1px solid rgba(255, 255, 255, 0.14)',
         padding: '60px 0 30px',
         color: 'var(--color-text-muted)',
       }}

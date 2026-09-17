@@ -203,14 +203,16 @@ const AreasPractica = ({ setActiveTab }) => {
                 key={area.id}
                 id={`accordion-item-${area.id}`}
                 style={{
-                  background: '#0D1117',
+                  background: 'linear-gradient(180deg, #0D1117 0%, #080C11 100%)',
                   border: isOpen
-                    ? '1px solid rgba(255, 255, 255, 0.35)'
-                    : '1px solid rgba(255, 255, 255, 0.08)',
+                    ? '1px solid rgba(255, 255, 255, 0.4)'
+                    : '1px solid rgba(255, 255, 255, 0.12)',
                   borderRadius: '16px',
                   overflow: 'hidden',
-                  transition: 'all 0.3s ease',
-                  boxShadow: isOpen ? '0 8px 30px rgba(0, 0, 0, 0.5)' : 'none',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                  boxShadow: isOpen
+                    ? '0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12)'
+                    : '0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
                 }}
               >
                 {/* Accordion Header / Button */}

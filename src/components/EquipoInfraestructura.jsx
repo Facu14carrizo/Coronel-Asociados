@@ -92,13 +92,14 @@ const EquipoInfraestructura = () => {
               key={member.id}
               className="team-card hero-glass-card"
               style={{
-                background: '#0D1117',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                background: 'linear-gradient(180deg, #0D1117 0%, #080C11 100%)',
+                border: '1px solid rgba(255, 255, 255, 0.14)',
                 borderRadius: '16px',
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
-                transition: 'all 0.3s ease',
+                transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+                boxShadow: '0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
               }}
             >
               {/* Image Header */}
@@ -129,9 +130,10 @@ const EquipoInfraestructura = () => {
                     position: 'absolute',
                     top: '14px',
                     left: '14px',
-                    background: 'rgba(5, 8, 14, 0.88)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    background: 'rgba(6, 9, 14, 0.92)',
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.22)',
                     borderRadius: '20px',
                     padding: '4px 12px',
                     fontSize: '0.68rem',
@@ -139,6 +141,7 @@ const EquipoInfraestructura = () => {
                     fontWeight: 600,
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
                   }}
                 >
                   {member.role}

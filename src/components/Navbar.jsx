@@ -32,12 +32,14 @@ const Navbar = ({ activeTab, setActiveTab }) => {
         left: 0,
         right: 0,
         zIndex: 1000,
-        transition: 'all 0.4s ease',
+        transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
         background: scrolled
-          ? 'rgba(5, 8, 14, 0.95)'
-          : 'linear-gradient(to bottom, rgba(5, 8, 14, 0.85) 0%, rgba(5, 8, 14, 0.4) 60%, transparent 100%)',
-        backdropFilter: scrolled ? 'blur(16px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
+          ? 'rgba(6, 9, 14, 0.94)'
+          : 'linear-gradient(to bottom, rgba(6, 9, 14, 0.9) 0%, rgba(6, 9, 14, 0.5) 60%, transparent 100%)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.14)' : '1px solid rgba(255, 255, 255, 0.04)',
+        boxShadow: scrolled ? '0 10px 30px rgba(0, 0, 0, 0.6)' : 'none',
         padding: scrolled ? '12px 0' : '18px 0',
       }}
     >
@@ -128,15 +130,18 @@ const Navbar = ({ activeTab, setActiveTab }) => {
                 onClick={() => handleNavClick(item.id)}
                 className="nav-item-btn"
                 style={{
-                  background: isActive ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
+                  background: isActive
+                    ? 'linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%)'
+                    : 'transparent',
                   color: isActive ? '#FFFFFF' : '#CBD5E1',
-                  border: isActive ? '1px solid rgba(255, 255, 255, 0.35)' : '1px solid transparent',
+                  border: isActive ? '1px solid rgba(255, 255, 255, 0.4)' : '1px solid transparent',
+                  boxShadow: isActive ? '0 2px 10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)' : 'none',
                   padding: '8px 18px',
                   borderRadius: '8px',
                   fontWeight: isActive ? 600 : 400,
                   fontSize: '0.92rem',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                   fontFamily: 'var(--font-sans)',
                 }}
               >
@@ -157,14 +162,15 @@ const Navbar = ({ activeTab, setActiveTab }) => {
               gap: '8px',
               padding: '8px 20px',
               fontSize: '0.9rem',
-              fontWeight: 500,
+              fontWeight: 600,
               color: '#FFFFFF',
-              background: 'transparent',
-              border: '1px solid rgba(255, 255, 255, 0.35)',
+              background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.38)',
               borderRadius: '8px',
               cursor: 'pointer',
-              transition: 'all 0.2s ease',
+              transition: 'all 0.25s ease',
               fontFamily: 'var(--font-sans)',
+              boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15)',
             }}
           >
             <Phone size={15} strokeWidth={1.75} />

@@ -79,13 +79,14 @@ const Contacto = () => {
           <div
             style={{
               gridColumn: 'span 4',
-              background: '#0D1117',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              background: 'linear-gradient(180deg, #0D1117 0%, #080C11 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.14)',
               borderRadius: '16px',
               padding: '40px 32px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
+              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
             }}
             className="col-span-5-resp"
           >
@@ -290,8 +291,8 @@ const Contacto = () => {
           <div
             style={{
               gridColumn: 'span 8',
-              background: '#0D1117',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              background: 'linear-gradient(180deg, #0D1117 0%, #080C11 100%)',
+              border: '1px solid rgba(255, 255, 255, 0.14)',
               borderRadius: '16px',
               padding: '36px',
               position: 'relative',
@@ -300,6 +301,7 @@ const Contacto = () => {
               flexDirection: 'column',
               justifyContent: 'space-between',
               minHeight: '480px',
+              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08)',
             }}
             className="col-span-7-resp"
           >

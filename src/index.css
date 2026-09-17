@@ -57,25 +57,27 @@ body {
 }
 
 /* Glassmorphic Luxury Panels */
+/* Glassmorphic Luxury Panels & Solid Windows */
 .glass-panel {
-  background: rgba(10, 16, 26, 0.7);
+  background: rgba(13, 17, 23, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-glass);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel:hover {
-  border-color: var(--border-glass-light);
-  background: rgba(14, 22, 36, 0.85);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(18, 24, 34, 0.92);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .glass-panel-gold {
-  background: linear-gradient(145deg, rgba(10, 16, 26, 0.85) 0%, rgba(5, 8, 14, 0.95) 100%);
+  background: linear-gradient(145deg, rgba(13, 17, 23, 0.92) 0%, rgba(6, 9, 14, 0.97) 100%);
   backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 /* Custom Scrollbar */
@@ -86,11 +88,11 @@ body {
   background: var(--color-bg-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: #152234;
+  background: #1B2332;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #253852;
+  background: #2D3A50;
 }
 
 /* Keyframe Animations */
@@ -114,7 +116,7 @@ body {
   align-items: center;
   gap: 8px;
   padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.04);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 50px;
   color: #E2E8F0;
@@ -122,10 +124,11 @@ body {
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* Luxury Buttons */
+/* Luxury Executive Buttons */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -138,18 +141,18 @@ body {
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  background: #F1F5F9;
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+  background: #F8FAFC;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
 }
 
 .btn-secondary {
@@ -158,9 +161,9 @@ body {
   justify-content: center;
   gap: 10px;
   padding: 14px 28px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.24);
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 0.95rem;
@@ -169,28 +172,62 @@ body {
   transition: all 0.25s ease;
   text-decoration: none;
   backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .btn-secondary:hover {
-  border-color: rgba(255, 255, 255, 0.6);
-  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.14);
   color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.hero-glass-card {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
 }
 
 .hero-glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.25) !important;
-  background: rgba(14, 22, 36, 0.7) !important;
-  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(18, 24, 34, 0.95) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+.nav-item-btn {
+  position: relative;
 }
 
 .nav-item-btn:hover {
   color: #FFFFFF !important;
   background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.nav-consulta-btn {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.25s ease !important;
 }
 
 .nav-consulta-btn:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
   border-color: rgba(255, 255, 255, 0.6) !important;
+  transform: translateY(-1px);
+}
+
+/* Executive Solid Form Controls */
+input, select, textarea {
+  background: rgba(13, 17, 23, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 10px !important;
+  color: #FFFFFF !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.25s ease !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08), inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Responsiveness Utilities */
