@@ -67,6 +67,9 @@ const Preloader = ({ onFinish }) => {
           <img
             src="/assets/nicologo.webp"
             alt="Coronel & Asociados"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
             style={{
               height: '100px',
               width: 'auto',
