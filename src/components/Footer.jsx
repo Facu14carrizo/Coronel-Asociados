@@ -77,7 +77,7 @@ const Footer = ({ setActiveTab }) => {
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem' }}>
               <li>
                 <button
-                  onClick={() => { setActiveTab('inicio'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  onClick={() => setActiveTab('inicio')}
                   style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}
                 >
                   Inicio
@@ -85,7 +85,7 @@ const Footer = ({ setActiveTab }) => {
               </li>
               <li>
                 <button
-                  onClick={() => { setActiveTab('areas'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  onClick={() => setActiveTab('areas')}
                   style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}
                 >
                   Áreas de Práctica
@@ -93,7 +93,7 @@ const Footer = ({ setActiveTab }) => {
               </li>
               <li>
                 <button
-                  onClick={() => { setActiveTab('equipo'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  onClick={() => setActiveTab('equipo')}
                   style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}
                 >
                   Equipo e Infraestructura
@@ -101,7 +101,7 @@ const Footer = ({ setActiveTab }) => {
               </li>
               <li>
                 <button
-                  onClick={() => { setActiveTab('contacto'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+                  onClick={() => setActiveTab('contacto')}
                   style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer' }}
                 >
                   Contacto & Evaluación

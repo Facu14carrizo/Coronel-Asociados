@@ -84,7 +84,6 @@ const HeroBanner = ({ setActiveTab }) => {
             <button
               onClick={() => {
                 setActiveTab('contacto');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className="btn-primary"
               style={{
@@ -109,7 +108,6 @@ const HeroBanner = ({ setActiveTab }) => {
             <button
               onClick={() => {
                 setActiveTab('areas');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className="btn-secondary"
               style={{

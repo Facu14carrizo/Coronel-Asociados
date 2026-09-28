@@ -21,7 +21,6 @@ const Navbar = ({ activeTab, setActiveTab }) => {
 
   const handleNavClick = (id) => {
     setActiveTab(id);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

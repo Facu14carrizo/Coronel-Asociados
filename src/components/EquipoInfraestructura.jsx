@@ -41,16 +41,6 @@ const teamMembers = [
     description: 'Abogado graduado de la UBA, con experiencia en derecho civil y penal enfocado en asesoramiento a individuos, PYMEs y empresas.',
     image: '/assets/asociados/a4/a44.webp',
   },
-  {
-    id: 'rossi',
-    name: 'DR. MATÍAS E. ROSSI',
-    role: 'SOCIO CORPORATIVO',
-    subtitle: 'Abogado (Universidad de Buenos Aires)',
-    matrícula: 'Matrícula CPACF • CASI',
-    specialty: 'Derecho Comercial & Societario',
-    description: 'Especializado en derecho comercial, contrataciones societarias y estructuración patrimonial corporativa de alta complejidad.',
-    image: '/assets/team_3.webp',
-  },
 ];
 
 const EquipoInfraestructura = () => {
@@ -125,27 +115,6 @@ const EquipoInfraestructura = () => {
                     transition: 'transform 0.4s ease',
                   }}
                 />
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '14px',
-                    left: '14px',
-                    background: 'rgba(6, 9, 14, 0.92)',
-                    backdropFilter: 'blur(10px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(255, 255, 255, 0.22)',
-                    borderRadius: '20px',
-                    padding: '4px 12px',
-                    fontSize: '0.68rem',
-                    color: '#FFFFFF',
-                    fontWeight: 600,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                  }}
-                >
-                  {member.role}
-                </div>
               </div>
 
               {/* Body Info */}

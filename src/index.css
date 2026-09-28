@@ -263,10 +263,36 @@ input:focus, select:focus, textarea:focus {
     left: 50% !important;
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
-    font-size: 1.05rem !important;
+    font-size: 1.02rem !important;
     white-space: nowrap !important;
     text-align: center !important;
     margin: 0 !important;
+    background: linear-gradient(110deg, #FFFFFF 0%, #FFFFFF 40%, rgba(255, 255, 255, 0.65) 50%, #FFFFFF 60%, #FFFFFF 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: mobileTitleShimmer 3.5s ease-in-out infinite, mobileTitlePulse 4s ease-in-out infinite;
+    text-shadow: 0 0 16px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes mobileTitleShimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes mobileTitlePulse {
+  0%, 100% {
+    opacity: 0.92;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
   }
 }
 
@@ -443,7 +469,7 @@ input:focus, select:focus, textarea:focus {
   }
 }
 
-/* Equipo Section Pyramid Layout */
+/* Equipo Section Diamond Layout */
 .team-pyramid-grid {
   display: flex;
   flex-wrap: wrap;
@@ -464,9 +490,37 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media (min-width: 1024px) {
+  .team-pyramid-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 380px);
+    justify-content: center;
+    gap: 28px;
+  }
+
   .team-card {
-    width: calc(33.333% - 16px);
+    width: 100%;
     max-width: 380px;
+  }
+
+  /* Diamond configuration (1 - 2 - 1) */
+  .team-card:nth-child(1) {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    width: 380px;
+  }
+
+  .team-card:nth-child(2) {
+    grid-column: 1;
+  }
+
+  .team-card:nth-child(3) {
+    grid-column: 2;
+  }
+
+  .team-card:nth-child(4) {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    width: 380px;
   }
 }
 
