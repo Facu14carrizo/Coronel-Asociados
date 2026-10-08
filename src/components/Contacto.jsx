@@ -1,5 +1,5 @@
-import React from 'react';
-import { MapPin, Phone, Mail, Navigation } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Phone, Mail, Navigation, Copy, Check } from 'lucide-react';
 
 const InstagramIcon = ({ size = 22, ...props }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -9,7 +9,26 @@ const InstagramIcon = ({ size = 22, ...props }) => (
   </svg>
 );
 
+const WhatsAppIcon = ({ size = 22, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 2C6.477 2 2 6.477 2 12c0 2.15.679 4.14 1.838 5.773L2.5 21.5l3.864-1.309A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 0 1-4.062-1.11l-.291-.173-2.298.778.791-2.241-.189-.3a7.96 7.96 0 1 1 6.049 3.046z"/>
+  </svg>
+);
+
 const Contacto = () => {
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText('coronel.asociados.estudio@gmail.com');
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const whatsappMessage = encodeURIComponent('Hola, quisiera realizar una consulta jurídica con el Estudio Coronel & Asociados.');
+  const whatsappUrl = `https://wa.me/5491153698788?text=${whatsappMessage}`;
   return (
     <section
       id="contacto"
@@ -147,22 +166,37 @@ const Contacto = () => {
 
                 <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)' }}></div>
 
-                {/* Telefono Directo */}
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
+                {/* Telefono Directo - WhatsApp */}
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '20px',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    transition: 'transform 0.2s ease',
+                  }}
+                  className="contact-whatsapp-link"
+                >
                   <div
                     style={{
                       width: '48px',
                       height: '48px',
                       borderRadius: '12px',
-                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      border: '1px solid rgba(37, 211, 102, 0.4)',
+                      background: 'rgba(37, 211, 102, 0.1)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#FFFFFF',
+                      color: '#25D366',
                       flexShrink: 0,
+                      transition: 'all 0.3s ease',
                     }}
                   >
-                    <Phone size={22} strokeWidth={1.5} />
+                    <WhatsAppIcon size={24} />
                   </div>
                   <div>
                     <span
@@ -175,13 +209,37 @@ const Contacto = () => {
                         display: 'block',
                       }}
                     >
-                      TELÉFONO DIRECTO
+                      TELÉFONO DIRECTO • WHATSAPP
                     </span>
-                    <p style={{ color: '#FFFFFF', fontWeight: 600, fontSize: '1.05rem', marginTop: '4px' }}>
-                      11 5369-8788
+                    <p
+                      style={{
+                        color: '#FFFFFF',
+                        fontWeight: 600,
+                        fontSize: '1.05rem',
+                        marginTop: '4px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        flexWrap: 'wrap',
+                      }}
+                    >
+                      <span>11 5369-8788</span>
+                      <span
+                        style={{
+                          fontSize: '0.72rem',
+                          color: '#25D366',
+                          background: 'rgba(37, 211, 102, 0.12)',
+                          border: '1px solid rgba(37, 211, 102, 0.3)',
+                          padding: '2px 8px',
+                          borderRadius: '12px',
+                          fontWeight: 500,
+                        }}
+                      >
+                        Abrir Chat
+                      </span>
                     </p>
                   </div>
-                </div>
+                </a>
 
                 <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)' }}></div>
 
@@ -202,7 +260,7 @@ const Contacto = () => {
                   >
                     <Mail size={22} strokeWidth={1.5} />
                   </div>
-                  <div style={{ overflow: 'hidden' }}>
+                  <div style={{ overflow: 'hidden', flexGrow: 1 }}>
                     <span
                       style={{
                         fontSize: '0.75rem',
@@ -215,22 +273,54 @@ const Contacto = () => {
                     >
                       CORREO ELECTRÓNICO
                     </span>
-                    <a
-                      href="mailto:coronel.asociados.estudio@gmail.com"
-                      className="contact-value-text"
+                    <div
                       style={{
-                        color: '#FFFFFF',
-                        fontWeight: 500,
-                        fontSize: 'clamp(0.78rem, 2.5vw, 0.92rem)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
                         marginTop: '4px',
-                        display: 'block',
-                        textDecoration: 'none',
-                        wordBreak: 'break-word',
-                        overflowWrap: 'anywhere',
+                        flexWrap: 'wrap',
                       }}
                     >
-                      coronel.asociados.estudio@gmail.com
-                    </a>
+                      <a
+                        href="mailto:coronel.asociados.estudio@gmail.com"
+                        className="contact-value-text"
+                        style={{
+                          color: '#FFFFFF',
+                          fontWeight: 500,
+                          fontSize: 'clamp(0.78rem, 2.5vw, 0.92rem)',
+                          textDecoration: 'none',
+                          wordBreak: 'break-word',
+                          overflowWrap: 'anywhere',
+                        }}
+                      >
+                        coronel.asociados.estudio@gmail.com
+                      </a>
+                      <button
+                        onClick={handleCopyEmail}
+                        type="button"
+                        title="Copiar correo electrónico"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          background: copiedEmail ? 'rgba(46, 204, 113, 0.2)' : 'rgba(255, 255, 255, 0.08)',
+                          border: `1px solid ${copiedEmail ? 'rgba(46, 204, 113, 0.5)' : 'rgba(255, 255, 255, 0.18)'}`,
+                          borderRadius: '8px',
+                          padding: '3px 10px',
+                          color: copiedEmail ? '#2ECC71' : '#CBD5E1',
+                          fontSize: '0.75rem',
+                          fontWeight: 500,
+                          cursor: 'pointer',
+                          transition: 'all 0.2s ease',
+                          outline: 'none',
+                          lineHeight: '1.4',
+                        }}
+                      >
+                        {copiedEmail ? <Check size={13} /> : <Copy size={13} />}
+                        <span>{copiedEmail ? '¡Copiado!' : 'Copiar'}</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
 
