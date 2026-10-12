@@ -215,9 +215,80 @@ const Footer = ({ setActiveTab }) => {
               Int. Tomkinson 2910, San Isidro<br />
               Provincia de Buenos Aires
             </a>
-            <p style={{ fontSize: '0.85rem', color: 'var(--color-gold-light)' }}>
-              Matrículas CPACF / San Isidro / Fuero Federal
-            </p>
+            <div style={{ marginTop: '16px' }}>
+              <span
+                style={{
+                  fontSize: '0.72rem',
+                  letterSpacing: '0.08em',
+                  color: '#8A99AD',
+                  textTransform: 'uppercase',
+                  fontWeight: 600,
+                  display: 'block',
+                  marginBottom: '8px',
+                }}
+              >
+                Habilitaciones Profesionales
+              </span>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <span
+                  style={{
+                    display: 'inline-block',
+                    padding: '3px 8px',
+                    borderRadius: '5px',
+                    border: '1px solid rgba(255, 255, 255, 0.14)',
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    color: '#CBD5E1',
+                    fontSize: '0.72rem',
+                    fontWeight: 500,
+                    letterSpacing: '0.02em',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  CPACF
+                </span>
+
+                <span
+                  style={{
+                    display: 'inline-block',
+                    padding: '3px 8px',
+                    borderRadius: '5px',
+                    border: '1px solid rgba(255, 255, 255, 0.14)',
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    color: '#CBD5E1',
+                    fontSize: '0.72rem',
+                    fontWeight: 500,
+                    letterSpacing: '0.02em',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  San Isidro (CASI)
+                </span>
+
+                <span
+                  style={{
+                    display: 'inline-block',
+                    padding: '3px 8px',
+                    borderRadius: '5px',
+                    border: '1px solid rgba(255, 255, 255, 0.14)',
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    color: '#CBD5E1',
+                    fontSize: '0.72rem',
+                    fontWeight: 500,
+                    letterSpacing: '0.02em',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  Fuero Federal
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 

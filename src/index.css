@@ -23,7 +23,7 @@
   --color-text-main: #FFFFFF;
   --color-text-muted: #8A99AD;
   --color-text-dim: #6E7C91;
-  
+
   /* Borders & Micro-lines */
   --border-gold: rgba(255, 255, 255, 0.08);
   --border-gold-subtle: rgba(255, 255, 255, 0.05);
@@ -84,21 +84,31 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--color-bg-dark);
 }
+
 ::-webkit-scrollbar-thumb {
   background: #1B2332;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #2D3A50;
 }
 
 /* Keyframe Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
@@ -215,7 +225,9 @@ body {
 }
 
 /* Executive Solid Form Controls */
-input, select, textarea {
+input,
+select,
+textarea {
   background: rgba(13, 17, 23, 0.9) !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
   border-radius: 10px !important;
@@ -224,7 +236,9 @@ input, select, textarea {
   transition: all 0.25s ease !important;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none !important;
   border-color: rgba(255, 255, 255, 0.45) !important;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08), inset 0 2px 4px rgba(0, 0, 0, 0.3) !important;
@@ -237,27 +251,33 @@ input:focus, select:focus, textarea:focus {
   .desktop-nav {
     display: none !important;
   }
+
   .mobile-menu-toggle {
     display: none !important;
   }
+
   .nav-cta-text {
     display: none;
   }
+
   .nav-logo-subtitle {
     display: none !important;
   }
+
   .nav-header-container {
     position: relative !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
   }
+
   .nav-logo-container {
     position: static !important;
     transform: none !important;
     display: flex !important;
     align-items: center !important;
   }
+
   .nav-logo-title {
     position: absolute !important;
     left: 50% !important;
@@ -280,16 +300,20 @@ input:focus, select:focus, textarea:focus {
   0% {
     background-position: 100% 0;
   }
+
   100% {
     background-position: -100% 0;
   }
 }
 
 @keyframes mobileTitlePulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.92;
     filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
   }
+
   50% {
     opacity: 1;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
@@ -302,12 +326,12 @@ input:focus, select:focus, textarea:focus {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
   }
-  
+
   .col-span-5-resp,
   .col-span-7-resp {
     grid-column: span 12 !important;
   }
-  
+
   .founder-photo-col {
     height: 320px !important;
     min-height: 320px !important;
@@ -316,7 +340,7 @@ input:focus, select:focus, textarea:focus {
   .padding-mobile-lg {
     padding: 24px !important;
   }
-  
+
   .padding-mobile-md {
     padding: 20px !important;
   }
@@ -324,9 +348,11 @@ input:focus, select:focus, textarea:focus {
   .uba-badge-text-desktop {
     display: none !important;
   }
+
   .uba-badge-text-mobile {
     display: inline !important;
   }
+
   .uba-badge {
     padding: 6px 12px !important;
     font-size: 0.72rem !important;
@@ -361,16 +387,20 @@ input:focus, select:focus, textarea:focus {
   .nav-header-container {
     padding: 0 12px !important;
   }
+
   .nav-logo-container {
     gap: 8px !important;
   }
+
   .nav-logo-img {
     height: 36px !important;
   }
+
   .nav-logo-title {
     font-size: 0.92rem !important;
     white-space: nowrap !important;
   }
+
   .nav-actions-container {
     gap: 10px !important;
   }
@@ -400,21 +430,27 @@ input:focus, select:focus, textarea:focus {
     gap: 10px !important;
     padding-bottom: 12px !important;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
   }
+
   .area-tabs-mobile-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
+    /* Chrome/Safari */
   }
+
   .area-tab-mobile-item {
     flex: 0 0 auto !important;
     min-width: 220px !important;
     padding: 14px 18px !important;
     gap: 12px !important;
   }
+
   .area-tab-mobile-item h3 {
     font-size: 0.88rem !important;
     white-space: nowrap;
   }
+
   .area-tab-mobile-item div {
     width: 36px !important;
     height: 36px !important;
@@ -424,9 +460,11 @@ input:focus, select:focus, textarea:focus {
     padding: 24px 20px !important;
     min-height: auto !important;
   }
+
   .area-detail-mobile-card h3 {
     font-size: 1.6rem !important;
   }
+
   .area-services-two-cols {
     grid-template-columns: 1fr !important;
     gap: 24px !important;
@@ -442,8 +480,8 @@ input:focus, select:focus, textarea:focus {
   display: flex;
   align-items: center;
   background: linear-gradient(90deg, rgba(9, 12, 16, 0.96) 0%, rgba(9, 12, 16, 0.9) 40%, rgba(9, 12, 16, 0.4) 75%, rgba(9, 12, 16, 0.15) 100%),
-              linear-gradient(180deg, rgba(9, 12, 16, 0.65) 0%, transparent 25%, rgba(9, 12, 16, 0.98) 100%),
-              url('/assets/heroo.png');
+    linear-gradient(180deg, rgba(9, 12, 16, 0.65) 0%, transparent 25%, rgba(9, 12, 16, 0.98) 100%),
+    url('/assets/heroo.png');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
@@ -455,8 +493,8 @@ input:focus, select:focus, textarea:focus {
     padding-bottom: 60px !important;
     min-height: auto !important;
     /* Higher overlay opacity */
-    background: linear-gradient(180deg, rgba(9, 12, 16, 0.85) 0%, rgba(9, 12, 16, 0.98) 100%),
-                url('/assets/heroo.png') !important;
+    background: linear-gradient(180deg, rgba(9, 12, 16, 0.85) 0%, rgba(9, 12, 16, 0.98) 200%),
+      url('/assets/heroo.png') !important;
     background-size: cover !important;
     background-position: 40% center !important;
   }
@@ -524,7 +562,3 @@ input:focus, select:focus, textarea:focus {
     width: 380px;
   }
 }
-
-
-
-
