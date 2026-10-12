@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Shield, MapPin, Scale } from 'lucide-react';
+import { Award, Shield, MapPin, Scale, ExternalLink } from 'lucide-react';
 
 const Footer = ({ setActiveTab }) => {
   return (
@@ -116,24 +116,105 @@ const Footer = ({ setActiveTab }) => {
               Especializaciones
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem' }}>
-              <li>Derecho Laboral</li>
-              <li>Derecho de Familia</li>
-              <li>Derecho Sucesorio</li>
-              <li>Derecho Comercial</li>
-              <li>Derecho Previsional</li>
-              <li>Derecho de la Salud</li>
+              {[
+                { label: 'Derecho Laboral', id: 'laboral' },
+                { label: 'Derecho Penal', id: 'penal' },
+                { label: 'Derecho de Familia', id: 'familia' },
+                { label: 'Derecho Sucesorio', id: 'sucesorio' },
+                { label: 'Derecho Comercial', id: 'comercial' },
+                { label: 'Derecho Previsional', id: 'previsional' },
+                { label: 'Derecho de la Salud', id: 'salud' },
+              ].map((esp) => (
+                <li key={esp.id}>
+                  <button
+                    onClick={() => {
+                      setActiveTab('areas');
+                      window.dispatchEvent(
+                        new CustomEvent('open-practice-area', { detail: { areaId: esp.id } })
+                      );
+                    }}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: 'inherit',
+                      cursor: 'pointer',
+                      padding: 0,
+                      font: 'inherit',
+                      textAlign: 'left',
+                      transition: 'color 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'inherit')}
+                  >
+                    {esp.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Col 4: Location & CPACF */}
           <div>
-            <h4 style={{ color: '#FFF', fontFamily: 'var(--font-serif-luxury)', marginBottom: '16px', fontSize: '1rem' }}>
-              Sede Central
-            </h4>
-            <p style={{ fontSize: '0.88rem', lineHeight: '1.6', marginBottom: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+              <h4 style={{ color: '#FFF', fontFamily: 'var(--font-serif-luxury)', margin: 0, fontSize: '1rem' }}>
+                Sede Central
+              </h4>
+              <a
+                href="https://maps.google.com/?q=Int.+Tomkinson+2910,+San+Isidro,+Provincia+de+Buenos+Aires"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Ver en Google Maps"
+                aria-label="Ver Sede Central en Google Maps"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  padding: '3px 9px',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(255, 255, 255, 0.18)',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  color: '#CBD5E1',
+                  fontSize: '0.72rem',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                  letterSpacing: '0.04em',
+                  transition: 'all 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.14)';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                  e.currentTarget.style.color = '#CBD5E1';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+                }}
+              >
+                <MapPin size={11} />
+                <span>Maps</span>
+                <ExternalLink size={10} />
+              </a>
+            </div>
+            <a
+              href="https://maps.google.com/?q=Int.+Tomkinson+2910,+San+Isidro,+Provincia+de+Buenos+Aires"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'block',
+                fontSize: '0.88rem',
+                lineHeight: '1.6',
+                marginBottom: '10px',
+                color: 'inherit',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'inherit')}
+            >
               Int. Tomkinson 2910, San Isidro<br />
               Provincia de Buenos Aires
-            </p>
+            </a>
             <p style={{ fontSize: '0.85rem', color: 'var(--color-gold-light)' }}>
               Matrículas CPACF / San Isidro / Fuero Federal
             </p>

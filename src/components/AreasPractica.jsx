@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Scale, Users, ScrollText, Briefcase, Landmark, PlusCircle, Check, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Scale, Users, ScrollText, Briefcase, Landmark, PlusCircle, Check, ChevronDown, Gavel } from 'lucide-react';
 
 const practiceAreasData = [
   {
@@ -16,6 +16,29 @@ const practiceAreasData = [
         'Despidos',
         'Accidentes laborales',
         'Diferencias salariales',
+      ]
+    ]
+  },
+  {
+    id: 'penal',
+    title: 'DERECHO PENAL',
+    badge: 'ENFOQUE PRÁCTICO Y EFICAZ',
+    badgeIcon: Gavel,
+    tabIcon: Gavel,
+    description: 'Asesoramiento integral en materia penal, brindando protección y representación jurídica tanto a imputados como a víctimas.',
+    servicesTitle: 'SERVICIOS CLAVE EN ESTA ESPECIALIDAD:',
+    columns: [
+      [
+        'Defensas',
+        'Querellas',
+        'Presentación por ley de víctimas',
+        'Excarcelación',
+      ],
+      [
+        'Participación en audiencias',
+        'Juicios abreviados',
+        'Suspensiones de juicio a prueba',
+        'Defensas en juicios',
       ]
     ]
   },
@@ -119,6 +142,26 @@ const practiceAreasData = [
 
 const AreasPractica = ({ setActiveTab }) => {
   const [openAreaId, setOpenAreaId] = useState('laboral');
+
+  useEffect(() => {
+    const handleOpenArea = (e) => {
+      const areaId = e.detail?.areaId;
+      if (areaId) {
+        setOpenAreaId(areaId);
+        setTimeout(() => {
+          const el = document.getElementById(`accordion-item-${areaId}`);
+          if (el) {
+            const yOffset = -90; // Navbar offset
+            const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    };
+
+    window.addEventListener('open-practice-area', handleOpenArea);
+    return () => window.removeEventListener('open-practice-area', handleOpenArea);
+  }, []);
 
   const toggleAccordion = (id) => {
     setOpenAreaId((prev) => {
