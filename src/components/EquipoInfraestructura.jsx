@@ -9,7 +9,7 @@ const teamMembers = [
     matrícula: 'Matrícula CPACF • CASI • FEDERAL',
     specialty: 'Derecho Laboral & Empresario',
     description: 'Abogado graduado de la UBA, especializado en asesoramiento jurídico a empresas, PYMEs y trabajadores en materia Laboral.',
-    image: '/assets/founder.webp',
+    image: '/assets/asociados/a1/a1.webp',
   },
   {
     id: 'zalazar',
