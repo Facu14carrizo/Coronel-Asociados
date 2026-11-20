@@ -1,7 +1,9 @@
 <div align="center">
 
-# ⚖️ Estudio Jurídico Coronel & Asociados
-### *Excelencia Académica • Solvencia Técnica • Abogados UBA*
+  <img src="public/assets/nicologo.png" alt="Estudio Jurídico Coronel & Asociados Logo" width="140" />
+
+  # ⚖️ Estudio Jurídico Coronel & Asociados
+  ### *Excelencia Académica • Solvencia Técnica • Abogados UBA*
 
 Plataforma web institucional y moderna diseñada para el **Estudio Jurídico Coronel & Asociados**, firma legal conformada por profesionales egresados de la Facultad de Derecho de la Universidad de Buenos Aires (UBA), especializada en litigios complejos, asesoramiento corporativo y resguardo patrimonial.
 
